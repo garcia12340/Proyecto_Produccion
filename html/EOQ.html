@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora EOQ</title>
+<link rel="stylesheet" href="../css/formulas.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Calculadora EOQ</h2>
+  <label for="demand">Demanda anual:</label>
+  <input type="number" id="demand" placeholder="Demanda anual">
+  
+  <label for="orderCost">Costo por pedido:</label>
+  <input type="number" id="orderCost" placeholder="Costo por pedido">
+  
+  <label for="holdingCost">Costo de mantenimiento:</label>
+  <input type="number" id="holdingCost" placeholder="Costo de mantenimiento">
+  
+  <button onclick="calculateEOQ()">Calcular EOQ</button>
+  
+  <p id="result"></p>
+</div>
+
+<script>
+
+</script>
+
+<script src="../js/calculos.js"></script>
+</body>
+</html>

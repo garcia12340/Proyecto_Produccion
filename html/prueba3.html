@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Inventario</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  label {
+    font-weight: bold;
+  }
+  input[type="number"] {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  #resultado {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Inventario Promedio</h2>
+  <div>
+    <label for="demanda">Demanda semanal (d):</label>
+    <input type="number" id="demanda" min="0" required>
+  </div>
+  <div>
+    <label for="ciclo">Ciclo de revisión (T) en semanas:</label>
+    <input type="number" id="ciclo" min="1" required>
+  </div>
+  <div>
+    <label for="seguridad">Inventario de seguridad (SS):</label>
+    <input type="number" id="seguridad" min="0" required>
+  </div>
+  <button onclick="calcular()">Calcular</button>
+  <div id="resultado"></div>
+</div>
+
+<script>
+  function calcular() {
+    var demanda = parseInt(document.getElementById('demanda').value);
+    var ciclo = parseInt(document.getElementById('ciclo').value);
+    var seguridad = parseInt(document.getElementById('seguridad').value);
+    
+    var nivelInventarioPromedio = (demanda * ciclo / 2) + seguridad;
+    var rotacionInventario = demanda / nivelInventarioPromedio;
+
+    // Redondear la rotación de inventario a 1 si es menor que 1
+    rotacionInventario = rotacionInventario < 1 ? 1 : rotacionInventario;
+
+    var resultadoHTML = `
+      <p>Nivel de Inventario Promedio: ${nivelInventarioPromedio.toFixed(0)}</p>
+      <p>Rotación de Inventario: ${rotacionInventario.toFixed(0)}</p>
+    `;
+
+    document.getElementById('resultado').innerHTML = resultadoHTML;
+  }
+</script>
+</body>
+</html>
