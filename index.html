@@ -26,15 +26,61 @@
                   <i class="ri-close-line nav__close"></i>
                </div>
             </div>
-
+               
             <!--=============== NAV MENU ===============-->
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                   <li><a href="#" class="nav__link">Home</a></li>
 
-                  <li><a href="#" class="nav__link">Company</a></li>
-
                   <!--=============== DROPDOWN 1 ===============-->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-arrow-up-down-line"></i> EOQ
+                           </a>
+                        </li>
+
+                        <!--=============== DROPDOWN SUBMENU ===============-->
+                        <li class="dropdown__subitem">
+                           <div class="dropdown__link">
+                              <i class="ri-bar-chart-line"></i> Control de Inventario <i class="ri-add-line dropdown__add"></i>
+                           </div>
+
+                           <ul class="dropdown__submenu">
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Refunds
+                                 </a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <!--=============== DROPDOWN 2 ===============-->
                   <li class="dropdown__item">
                      <div class="nav__link">
                         Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
@@ -80,11 +126,59 @@
                            </ul>
                         </li>
                      </ul>
-                  </li>
-                  
-                  <li><a href="#" class="nav__link">Products</a></li>
 
-                  <!--=============== DROPDOWN 2 ===============-->
+                  </li>
+
+                  <!--=============== DROPDOWN 3 ===============-->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-arrow-up-down-line"></i> EOQ
+                           </a>
+                        </li>
+
+                        <!--=============== DROPDOWN SUBMENU ===============-->
+                        <li class="dropdown__subitem">
+                           <div class="dropdown__link">
+                              <i class="ri-bar-chart-line"></i> Control de Inventario <i class="ri-add-line dropdown__add"></i>
+                           </div>
+
+                           <ul class="dropdown__submenu">
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Refunds
+                                 </a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+
+                  </li>
+
+                  <!--=============== DROPDOWN 4 ===============-->
                   <li class="dropdown__item">
                      <div class="nav__link">
                         Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
@@ -126,9 +220,33 @@
 
 
       <footer>
-         
+         <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+         </div>
+         <ul class="social_icon">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+         </ul>
+
+         <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Servicies</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Contact</a></li>
+         </ul>
+         <p>@SDerechos Reservados</p>
       </footer>
+
+      
       <!--=============== MAIN JS ===============-->
       <script src="../Proyecto_Produccion/assets/js/main.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
    </body>
 </html>
