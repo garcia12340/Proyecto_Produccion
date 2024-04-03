@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: url(..//img/bg4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedor__todo{
+    width: 100%;
+    max-width: 800px;
+    margin: 550px auto;
+    position: relative;
+}
+
+/*Formularios*/
+.contenedor__login-register{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+}
+
+
+.contenedor__login-register form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register form h1{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+
+
+.formulario__register section {
+    position: relative;
+    display: inline-block;
+    margin: 0 40px;
+    width: 220px;
+    left: -40px;
+}
+/*   margin-right: 45px;*/
+
+.formulario__register button {
+    display: block; /* Hace que el botón ocupe todo el ancho disponible */
+    margin-top: 10px; /* Ajusta el margen superior del botón */
+}
+
+.formulario__register label,select{
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    color: #09233d;
+}
+
+.contenedor__login-register form input{
+    width: 120%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-register form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.formulario__register{
+    opacity: 1;
+    display: block;
+}
