@@ -39,13 +39,23 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
-  overflow-y: scroll; /* Agrega una barra de desplazamiento vertical siempre */
+  /*overflow-y: scroll;  Agrega una barra de desplazamiento vertical siempre */
+  background-image: url(..//img/bg4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 ul {

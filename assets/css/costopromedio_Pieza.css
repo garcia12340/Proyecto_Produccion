@@ -1,0 +1,133 @@
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    /*margin: auto;*/
+    margin-top: 100px;
+}
+
+.contenedor__todo{
+    width: 100%;
+    max-width: 350px;
+    margin: 400px auto;
+    position: relative;
+}
+
+.formulario__register button, label {
+    display: block; /* Hace que el botón ocupe todo el ancho disponible */
+    margin-top: 20px; /* Ajusta el margen superior del botón */
+}
+
+.formulario__register label,select{
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    color: #a9b7c5;
+}
+
+/*Formularios*/
+.contenedor__login-register{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+}
+
+.contenedor__login-register form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register #eq {
+    font-size: 30px;
+    text-align: center;
+    margin-top: -60px;
+    color: #46A2FD;
+}
+
+/*
+.contenedor__login-register form h1{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+*/
+
+.contenedor__login-register form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-register form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.formulario__register{
+    opacity: 1;
+    display: block;
+}
+
+#resultado {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*=======RESPONSIVE=======*/
+/* Para dispositivos con un ancho máximo de 768px (tablets y celulares en orientación horizontal) */
+@media screen and (max-width: 768px) {
+    .contenedor__todo {
+        max-width: 100%;
+        margin: 300px auto;
+    }
+
+    .contenedor__login-register {
+        max-width: 100%;
+        top: -150px;
+        left: 0;
+    }
+
+    .contenedor__login-register form {
+        padding: 60px 10px;
+        border-radius: 10px;
+    }
+
+    .contenedor__login-register #eq {
+        font-size: 24px;
+        margin-top: -40px;
+    }
+}
+
+/* Para dispositivos con un ancho máximo de 480px (celulares en orientación vertical) */
+@media screen and (max-width: 480px) {
+    .contenedor__login-register form {
+        padding: 40px 10px;
+    }
+
+    .contenedor__login-register #eq {
+        font-size: 20px;
+        margin-top: -20px;
+    }
+}
+
+

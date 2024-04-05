@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <!--=============== REMIXICONS ===============-->
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Costo De Mantenimiento Correctivo</title>
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../Proyecto_Produccion/assets/css/index.css">
-
-      <title>PROYECTO DE PRODUCCION III</title>
-   </head>
-   <body>
-      <!--=============== HEADER ===============-->
-      <header class="header">
-         <nav class="nav container">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="..//css/mantenimento_Correctivo.css">
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <nav class="nav container">
             <div class="nav__data">
-               <a href="../Proyecto_Produccion/index.html" class="nav__logo">
+               <a href="#" class="nav__logo">
                   <i class="ri-planet-line"></i> Company
                </a>
                
@@ -40,13 +39,13 @@
 
                      <ul class="dropdown__menu">
                         <li>
-                           <a href="../Proyecto_Produccion/assets/html/CMC.html" target="_blank" class="dropdown__link">
+                           <a href="../Proyecto_Produccion/assets/html/CMC.html" class="dropdown__link">
                               <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
                            </a>                          
                         </li>
 
                         <li>
-                           <a href="../Proyecto_Produccion/assets/html/EOQ.html" target="_blank" class="dropdown__link">
+                           <a href="../Proyecto_Produccion/assets/html/EOQ.html" class="dropdown__link">
                               <i class="ri-arrow-up-down-line"></i> EOQ
                            </a>
                         </li>
@@ -59,13 +58,13 @@
 
                            <ul class="dropdown__submenu">
                               <li>
-                                 <a href="../Proyecto_Produccion/assets/html/CFP.html" target="_blank" class="dropdown__sublink">
+                                 <a href="#" class="dropdown__sublink">
                                     <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
                                  </a>
                               </li>
       
                               <li>
-                                 <a href="../Proyecto_Produccion/assets/html/CPP.html" target="_blank" class="dropdown__sublink">
+                                 <a href="#" class="dropdown__sublink">
                                     <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
                                  </a>
                               </li>
@@ -156,13 +155,13 @@
 
                            <ul class="dropdown__submenu">
                               <li>
-                                 <a href="../Proyecto_Produccion/assets/html/CFP.html" class="dropdown__sublink">
+                                 <a href="#" class="dropdown__sublink">
                                     <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
                                  </a>
                               </li>
       
                               <li>
-                                 <a href="../Proyecto_Produccion/assets/html/CPP.html" class="dropdown__sublink">
+                                 <a href="#" class="dropdown__sublink">
                                     <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
                                  </a>
                               </li>
@@ -208,45 +207,67 @@
                   <li><a href="#" class="nav__link">Contact</a></li>
                </ul>
             </div>
-         </nav>
-      </header>
+        </nav>
 
-      <main>
+    </header>
 
+    <main>
+        <div class="contenedor__todo">
+            <div class="contenedor__login-register">
+                <form action="" class="formulario__register">
+                    <h1 id="mc">Mantenimiento Correctivo</h1>
+                    <section>
+                        <input type="number" placeholder="Horas Kilométradas">
+                    </section>
 
+                    <section>
+                        <label for="mtbf">MTBF:</label>
+                        <select id="mtbf">
+                            <option value="hours">Horas</option>
+                            <option value="percentage">Porcentaje</option>
+                        </select>
+                    </section>
 
+                    <section>
+                        <input type="number" placeholder="Valor de MTBF">
+                    </section>
 
-      </main>
+                    <section>
+                        <input type="number" placeholder="Duracion Tarea (Horas)">
+                    </section>
 
+                    <section>
+                        <input type="number" placeholder="Costo Por Hora de Trabajo ($)">
+                    </section>
 
-      <footer>
-         <div class="waves">
-            <div class="wave" id="wave1"></div>
-            <div class="wave" id="wave2"></div>
-            <div class="wave" id="wave3"></div>
-            <div class="wave" id="wave4"></div>
-         </div>
-         <ul class="social_icon">
-            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-         </ul>
+                    <section>
+                        <input type="number" placeholder="Respuestos ($)">
+                    </section>
 
-         <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Servicies</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
-         </ul>
-         <p>@SDerechos Reservados</p>
-      </footer>
+                    <section>
+                        <input type="number" placeholder="Costo de Tareas Operacionales ($)">
+                    </section>
 
-      
-      <!--=============== MAIN JS ===============-->
-      <script src="../Proyecto_Produccion/assets/js/main.js"></script>
-      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-   </body>
+                    <section>
+                        <input type="number" placeholder="Retraso Logístico ($)">
+                    </section>
+
+                    <section>
+                        <input type="number" placeholder="Costo Unitario por Parada ($/hora)">
+                    </section>
+
+                    <section>
+                        <input type="number" placeholder="Costos de Falla de Vez Única ($)">
+                    </section>
+
+                    <button onclick="calcularCMT()">Calcular</button>
+                    <div id="resultado"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="../js/main.js"></script>
+</body>
 </html>
