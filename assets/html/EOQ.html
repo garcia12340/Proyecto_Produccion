@@ -215,18 +215,18 @@
                     <h1 id="eq">Cantidad Económica de Pedidos</h1>
 
                     <section>
-                        <input type="number" placeholder="Demanda Diaria">
+                        <input type="number" id="demand" placeholder="Demanda Diaria">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Costo por Pedido">
+                        <input type="number" id="orderCost" placeholder="Costo por Pedido">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Costo de Mantenimiento Anual">
+                        <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
                     </section>
 
-                    <button onclick="calculateEOQ()">Calcular</button>
+                    <button onclick="calculateEOQ(event)">Calcular</button>
                     <div id="resultado"></div>
                 </form>
             </div>
@@ -234,6 +234,7 @@
     </main>
 
    <!--=============== MAIN JS ===============-->
+   <script src="../js/calculos_Formulas.js"></script>
    <script src="../js/main.js"></script>
 </body>
 </html>

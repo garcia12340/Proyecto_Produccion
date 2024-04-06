@@ -122,6 +122,7 @@ main{
 #resultado {
     margin-top: 10px;
     font-weight: bold;
+    text-align: justify;
 }
 
 

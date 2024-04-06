@@ -1,34 +1,62 @@
 
 //Formula de Cantidad Económica de Pedidos
-/*
 function calculateEOQ() {
-    var D = document.getElementById('demand').value;
-    var S = document.getElementById('orderCost').value;
-    var H = document.getElementById('holdingCost').value;
-    
-    var EOQ = Math.sqrt((2 * (D) * (365) * S) / H);
-    document.getElementById('result').innerText = 'EOQ: ' + EOQ.toFixed(0);
+  event.preventDefault(); // Detener el comportamiento predeterminado del formulario
+  var D = document.getElementById('demand').value;
+  var S = document.getElementById('orderCost').value;
+  var H = document.getElementById('holdingCost').value;
+  
+  var EOQ = Math.sqrt((2 * (D) * (365) * S) / H);
+
+  var analisis = 
+  `La cantidad de pedidos que la empresa deberá realizar es de ${EOQ.toFixed(0)} unidades para que el inventario no se agote durante el tiempo de
+  entrega.`;
+
+  document.getElementById('resultado').innerText = analisis;
 }
-*/
+
+//Formula de Costo Fijo Por Pieza
+function calculateCFP() {
+  event.preventDefault(); // Detener el comportamiento predeterminado del formulario
+  
+  var demand = parseInt(document.getElementById('demand').value);
+  var orderMethod = document.getElementById('orderMethod').value;
+  var orderQuantityInput = document.getElementById('orderQuantityInput');
+  var orderQuantity = 0;
+
+  if (orderMethod === 'percentage') {
+      orderQuantity = parseInt(document.getElementById('orderQuantity').value) * demand / 100;
+  } else {
+      orderQuantity = parseInt(document.getElementById('orderQuantity').value);
+  }
+
+  var safetyStock = parseInt(document.getElementById('safetyStock').value);
+  
+  var averageInventory = (orderQuantity / 2) + safetyStock;
+  var inventoryTurnover = demand / averageInventory;
+  
+  document.getElementById('resultado').innerHTML = "<p>Nivel de Inventario Promedio: " + averageInventory.toFixed(0) + " unidades</p>" +
+                                                 "<p>Rotación de Inventario: " + inventoryTurnover.toFixed(0) + " veces al año</p>";
+}
 
 //Formula de Costo Promedio Por Pieza
 function calcularCPP() {
-    event.preventDefault(); // Detener el comportamiento predeterminado del formulario
+  event.preventDefault(); // Detener el comportamiento predeterminado del formulario
     
-    var demanda = parseInt(document.getElementById('demanda').value);
-    var ciclo = parseInt(document.getElementById('ciclo').value);
-    var seguridad = parseInt(document.getElementById('seguridad').value);
+  var demanda = parseInt(document.getElementById('demanda').value);
+  var ciclo = parseInt(document.getElementById('ciclo').value);
+  var seguridad = parseInt(document.getElementById('seguridad').value);
     
-    var nivelInventarioPromedio = (demanda * ciclo / 2) + seguridad;
-    var rotacionInventario = demanda / nivelInventarioPromedio;
+  var nivelInventarioPromedio = (demanda * ciclo / 2) + seguridad;
+  var rotacionInventario = demanda / nivelInventarioPromedio;
 
-    // Redondear la rotación de inventario a 1 si es menor que 1
-    rotacionInventario = rotacionInventario < 1 ? 1 : rotacionInventario;
+  // Redondear la rotación de inventario a 1 si es menor que 1
+  rotacionInventario = rotacionInventario < 1 ? 1 : rotacionInventario;
 
     var resultadoHTML = `
       <p>Nivel de Inventario Promedio: ${nivelInventarioPromedio.toFixed(0)}</p>
       <p>Rotación de Inventario: ${rotacionInventario.toFixed(0)}</p>
     `;
 
-    document.getElementById('resultado').innerHTML = resultadoHTML;
+  document.getElementById('resultado').innerHTML = resultadoHTML;
 }

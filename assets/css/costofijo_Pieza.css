@@ -88,6 +88,12 @@ main{
     display: block;
 }
 
+#resultado {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: justify;
+}
+
 /*=======RESPONSIVE=======*/
 /* Para dispositivos con un ancho máximo de 768px (tablets y celulares en orientación horizontal) */
 @media screen and (max-width: 768px) {

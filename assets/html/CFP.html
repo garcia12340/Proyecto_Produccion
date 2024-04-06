@@ -215,7 +215,7 @@
                     <h1 id="eq">Costo Fijo Por Pieza</h1>
 
                     <section>
-                        <input type="number" placeholder="Demanda Anual (D)">
+                        <input type="number" id="demand" min="1" placeholder="Demanda Anual (D)" required>
                     </section>
 
                     <section>
@@ -227,14 +227,14 @@
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Cantidad Pedida (Q)">
+                        <input type="number" id="orderQuantity" min="1" placeholder="Cantidad Pedida (Q)" required>
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Inventario de Seguridad (SS)">
+                        <input type="number" id="safetyStock" min="0" placeholder="Inventario de Seguridad (SS)" required>
                     </section>
 
-                    <button onclick="calculateCFP()">Calcular</button>
+                    <button onclick="calculateCFP(event)">Calcular</button>
                     <div id="resultado"></div>
                 </form>
             </div>
@@ -243,5 +243,6 @@
 
    <!--=============== MAIN JS ===============-->
    <script src="../js/main.js"></script>
+   <script src="../js/calculos_Formulas.js"></script>
 </body>
 </html>

@@ -31,7 +31,7 @@ main{
 .contenedor__todo{
     width: 100%;
     max-width: 350px;
-    margin: 400px auto;
+    margin: 500px auto;
     position: relative;
 }
 
@@ -96,6 +96,12 @@ main{
 .formulario__register{
     opacity: 1;
     display: block;
+}
+
+#resultado {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: justify;
 }
 
 /*=======RESPONSIVE=======*/
