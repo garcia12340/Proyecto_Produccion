@@ -118,3 +118,45 @@ main{
     opacity: 1;
     display: block;
 }
+
+#resultado {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/*=======RESPONSIVE=======*/
+/* Media queries para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .contenedor__todo {
+        max-width: 100%;
+        margin: 550px auto; /* Ajuste de margen para dispositivos móviles */
+    }
+
+    .contenedor__login-register {
+        max-width: 100%;
+        top: -150px;
+        left: 0;
+        text-align: center;
+    }
+
+}
+
+/* Media queries para tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .contenedor__todo {
+        max-width: 100%;
+        margin: 550px auto; /* Ajuste de margen para tablets */
+    }
+
+    .contenedor__login-register {
+        max-width: 100%;
+        top: -150px;
+        left: 0;
+        align-items: center;
+    }
+
+}
+
+
+
