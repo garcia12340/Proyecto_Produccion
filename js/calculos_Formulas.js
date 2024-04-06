@@ -1,5 +1,52 @@
 
 //Formula de Cantidad Económica de Pedidos
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('formulario');
+  var calcularButton = document.getElementById('calcularButton');
+
+  form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Evitar que el formulario se envíe y recargue la página
+      calcularCMT();
+  });
+
+  function calcularCMT() {
+      var horas = parseFloat(document.getElementById('horas').value);
+      var mtbf = document.getElementById('mtbf').value;
+      var valorMtbf = parseFloat(document.getElementById('valorMtbf').value);
+      var duracion = parseFloat(document.getElementById('duracion').value);
+      var costoHora = parseFloat(document.getElementById('costoHora').value);
+      var repuestos = parseFloat(document.getElementById('repuestos').value);
+      var costosOperacionales = parseFloat(document.getElementById('costosOperacionales').value);
+      var retrasoLogistico = parseFloat(document.getElementById('retrasoLogistico').value);
+      var costoUnitario = parseFloat(document.getElementById('costoUnitario').value);
+      var costosFallas = parseFloat(document.getElementById('costosFallas').value);
+
+      // Calcular MTBF
+      var MTBF;
+      if (mtbf === 'hours') {
+          MTBF = valorMtbf;
+      } else if (mtbf === 'percentage') {
+          MTBF = horas * (valorMtbf / 100);
+      } else {
+          console.error('Tipo de MTBF no válido');
+          return;
+      }
+
+      // Calcular el número de fallas esperadas durante el tiempo de mantenimiento
+      var numeroFallas = horas / MTBF;
+
+      // Calcular el costo correctivo
+      var costoCorrectivo = numeroFallas.toFixed(0) * ((duracion * costoHora + repuestos + costosOperacionales + retrasoLogistico) + (duracion * costoUnitario + costosFallas));
+
+      // Realizar el análisis en texto
+      var analisis = "Basado en los datos ingresados, se estima que habrá aproximadamente " + numeroFallas.toFixed(0) + " fallas durante el tiempo de mantenimiento. Estas fallas tienen un costo total estimado de $" + costoCorrectivo.toFixed(0) + ".";
+
+      // Mostrar el resultado con el análisis
+      document.getElementById('resultado').innerText = analisis;
+  }
+});
+
+//Formula de Cantidad Económica de Pedidos
 function calculateEOQ() {
   event.preventDefault(); // Detener el comportamiento predeterminado del formulario
   var D = document.getElementById('demand').value;

@@ -212,10 +212,10 @@
     <main>
         <div class="contenedor__todo">
             <div class="contenedor__login-register">
-                <form action="" class="formulario__register">
+                <form id="formulario" class="formulario__register">
                     <h1 id="mc">Mantenimiento Correctivo</h1>
                     <section>
-                        <input type="number" placeholder="Horas Kilométradas">
+                        <input type="number" id="horas" placeholder="Horas Kilométradas" required>
                     </section>
 
                     <section>
@@ -227,45 +227,46 @@
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Valor de MTBF">
+                        <input type="number" id="valorMtbf" placeholder="Valor de MTBF" required>
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Duracion Tarea (Horas)">
+                        <input type="number" id="duracion" placeholder="Duracion Tarea (Horas)">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Costo Por Hora de Trabajo ($)">
+                        <input type="number" id="costoHora" placeholder="Costo Por Hora de Trabajo ($)">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Respuestos ($)">
+                        <input type="number" id="repuestos" placeholder="Respuestos ($)">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Costo de Tareas Operacionales ($)">
+                        <input type="number" id="costosOperacionales" placeholder="Costo de Tareas Operacionales ($)">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Retraso Logístico ($)">
+                        <input type="number" id="retrasoLogistico" placeholder="Retraso Logístico ($)">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Costo Unitario por Parada ($/hora)">
+                        <input type="number" id="costoUnitario" placeholder="Costo Unitario por Parada ($/hora)">
                     </section>
 
                     <section>
-                        <input type="number" placeholder="Costos de Falla de Vez Única ($)">
+                        <input type="number" id="costosFallas" placeholder="Costos de Falla de Vez Única ($)">
                     </section>
 
-                    <button onclick="calcularCMT()">Calcular</button>
+                    <button id="calcularButton">Calcular</button>
                     <div id="resultado"></div>
                 </form>
             </div>
         </div>
     </main>
 
-    <!--=============== MAIN JS ===============-->
-    <script src="../js/main.js"></script>
+   <!--=============== MAIN JS ===============-->
+   <script src="../js/main.js"></script>
+   <script src="../js/calculos_Formulas.js"></script>
 </body>
 </html>
