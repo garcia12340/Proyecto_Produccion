@@ -3,18 +3,18 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Cantidad Económica de Pedidos</title>
+   <title>Costo Promedio Por Pieza</title>
    <!--=============== REMIXICONS ===============-->
    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
    <link rel="stylesheet" href="../css/index.css">
-   <link rel="stylesheet" href="..//css/cantidad_Pedidos.css">
+   <link rel="stylesheet" href="..//css/costopromedio_Pieza.css">
 </head>
 <body>
     <!--=============== HEADER ===============-->
     <header class="header">
         <nav class="nav container">
             <div class="nav__data">
-               <a href="#" class="nav__logo">
+               <a href="../index.html" class="nav__logo">
                   <i class="ri-planet-line"></i> Company
                </a>
                
@@ -27,7 +27,7 @@
             <!--=============== NAV MENU ===============-->
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-                  <li><a href="index.html" class="nav__link">Home</a></li>
+                  <li><a href="../index.html" class="nav__link">Home</a></li>
 
                   <!--=============== DROPDOWN 1 ===============-->
                   <li class="dropdown__item">
@@ -37,13 +37,13 @@
 
                      <ul class="dropdown__menu">
                         <li>
-                           <a href="../Proyecto_Produccion/assets/html/CMC.html" class="dropdown__link">
+                           <a href="../html/CMC.html" class="dropdown__link">
                               <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
                            </a>                          
                         </li>
 
                         <li>
-                           <a href="../Proyecto_Produccion/assets/html/EOQ.html" class="dropdown__link">
+                           <a href="../html/EOQ.html" class="dropdown__link">
                               <i class="ri-arrow-up-down-line"></i> EOQ
                            </a>
                         </li>
@@ -56,13 +56,13 @@
 
                            <ul class="dropdown__submenu">
                               <li>
-                                 <a href="#" class="dropdown__sublink">
+                                 <a href="../html/CFP.html" class="dropdown__sublink">
                                     <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
                                  </a>
                               </li>
       
                               <li>
-                                 <a href="#" class="dropdown__sublink">
+                                 <a href="../html/CPP.html" class="dropdown__sublink">
                                     <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
                                  </a>
                               </li>
@@ -212,21 +212,21 @@
         <div class="contenedor__todo">
             <div class="contenedor__login-register">
                 <form action="" class="formulario__register">
-                    <h1 id="eq">Cantidad Económica de Pedidos</h1>
+                    <h1 id="eq">Costo Promedio Por Pieza</h1>
 
                     <section>
-                        <input type="number" id="demand" placeholder="Demanda Diaria">
+                        <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" required>
                     </section>
 
                     <section>
-                        <input type="number" id="orderCost" placeholder="Costo por Pedido">
+                        <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" required>
                     </section>
 
                     <section>
-                        <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
+                        <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" required>
                     </section>
 
-                    <button onclick="calculateEOQ(event)">Calcular</button>
+                    <button onclick="calcularCPP(event)">Calcular</button>
                     <div id="resultado"></div>
                 </form>
             </div>
@@ -234,7 +234,7 @@
     </main>
 
    <!--=============== MAIN JS ===============-->
-   <script src="../js/calculos_Formulas.js"></script>
    <script src="../js/main.js"></script>
+   <script src="../js/calculos_Formulas.js"></script>
 </body>
 </html>

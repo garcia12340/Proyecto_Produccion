@@ -3,18 +3,18 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Costo Fijo Por Pieza</title>
+   <title>Cantidad Económica de Pedidos</title>
    <!--=============== REMIXICONS ===============-->
    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
    <link rel="stylesheet" href="../css/index.css">
-   <link rel="stylesheet" href="..//css/costofijo_Pieza.css">
+   <link rel="stylesheet" href="..//css/cantidad_Pedidos.css">
 </head>
 <body>
     <!--=============== HEADER ===============-->
     <header class="header">
         <nav class="nav container">
             <div class="nav__data">
-               <a href="" class="nav__logo">
+               <a href="../index.html" class="nav__logo">
                   <i class="ri-planet-line"></i> Company
                </a>
                
@@ -212,29 +212,21 @@
         <div class="contenedor__todo">
             <div class="contenedor__login-register">
                 <form action="" class="formulario__register">
-                    <h1 id="eq">Costo Fijo Por Pieza</h1>
+                    <h1 id="eq">Cantidad Económica de Pedidos</h1>
 
                     <section>
-                        <input type="number" id="demand" min="1" placeholder="Demanda Anual (D)" required>
+                        <input type="number" id="demand" placeholder="Demanda Diaria">
                     </section>
 
                     <section>
-                        <label for="orderMethod">Método de Cantidad Pedida:</label>
-                        <select id="orderMethod">
-                            <option value="units">Unidades</option>
-                            <option value="percentage">Porcentaje (%)</option>
-                        </select>
+                        <input type="number" id="orderCost" placeholder="Costo por Pedido">
                     </section>
 
                     <section>
-                        <input type="number" id="orderQuantity" min="1" placeholder="Cantidad Pedida (Q)" required>
+                        <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
                     </section>
 
-                    <section>
-                        <input type="number" id="safetyStock" min="0" placeholder="Inventario de Seguridad (SS)" required>
-                    </section>
-
-                    <button onclick="calculateCFP(event)">Calcular</button>
+                    <button onclick="calculateEOQ(event)">Calcular</button>
                     <div id="resultado"></div>
                 </form>
             </div>
@@ -242,7 +234,7 @@
     </main>
 
    <!--=============== MAIN JS ===============-->
-   <script src="../js/main.js"></script>
    <script src="../js/calculos_Formulas.js"></script>
+   <script src="../js/main.js"></script>
 </body>
 </html>

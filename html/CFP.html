@@ -3,18 +3,18 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Costo Promedio Por Pieza</title>
+   <title>Costo Fijo Por Pieza</title>
    <!--=============== REMIXICONS ===============-->
    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
    <link rel="stylesheet" href="../css/index.css">
-   <link rel="stylesheet" href="..//css/costopromedio_Pieza.css">
+   <link rel="stylesheet" href="../css/costofijo_Pieza.css">
 </head>
 <body>
     <!--=============== HEADER ===============-->
     <header class="header">
         <nav class="nav container">
             <div class="nav__data">
-               <a href="" class="nav__logo">
+               <a href="../index.html" class="nav__logo">
                   <i class="ri-planet-line"></i> Company
                </a>
                
@@ -212,21 +212,29 @@
         <div class="contenedor__todo">
             <div class="contenedor__login-register">
                 <form action="" class="formulario__register">
-                    <h1 id="eq">Costo Promedio Por Pieza</h1>
+                    <h1 id="eq">Costo Fijo Por Pieza</h1>
 
                     <section>
-                        <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" required>
+                        <input type="number" id="demand" min="1" placeholder="Demanda Anual (D)" required>
                     </section>
 
                     <section>
-                        <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" required>
+                        <label for="orderMethod">Método de Cantidad Pedida:</label>
+                        <select id="orderMethod">
+                            <option value="units">Unidades</option>
+                            <option value="percentage">Porcentaje (%)</option>
+                        </select>
                     </section>
 
                     <section>
-                        <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" required>
+                        <input type="number" id="orderQuantity" min="1" placeholder="Cantidad Pedida (Q)" required>
                     </section>
 
-                    <button onclick="calcularCPP(event)">Calcular</button>
+                    <section>
+                        <input type="number" id="safetyStock" min="0" placeholder="Inventario de Seguridad (SS)" required>
+                    </section>
+
+                    <button onclick="calculateCFP(event)">Calcular</button>
                     <div id="resultado"></div>
                 </form>
             </div>

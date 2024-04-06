@@ -500,3 +500,58 @@ footer .wave#wave4{
     padding: 20px 30px; /* Ajusta el relleno según sea necesario */
   }
 }
+
+
+/**/
+main{
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 20px;
+  margin: auto;
+  /*margin: auto;*/
+  margin-top: 100px;
+}
+
+.content-section {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.fade-in {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(243, 243, 243);
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.5s ease; /* Transición suave de opacidad */
+  text-align: justify;
+  padding-bottom: 20px; /* Espacio entre párrafos */
+}
+
+/* Animación al aparecer cuando la sección es visible en la ventana */
+.fade-in {
+  animation: fade-in 1s forwards;
+}
+
+/* Definición de la animación */
+@keyframes fade-in {
+  from {
+      opacity: 0; /* Comienza completamente transparente */
+  }
+  to {
+      opacity: 1; /* Termina completamente opaco */
+  }
+}
+
+/* Estilo para los elementos de la lista */
+.bullet {
+  display: inline-block;
+  width: 20px; /* Espacio entre el bullet y el texto */
+}
+
+/* Estilo específico para el bullet */
+.bullet:before {
+  content: "\2022"; /* Código del bullet */
+  color: #ff7f50; /* Color del bullet */
+  font-size: 18px; /* Tamaño del bullet */
+  margin-right: 5px; /* Espacio entre el bullet y el texto */
+}
