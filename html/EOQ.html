@@ -207,34 +207,87 @@
             </div>
         </nav>
 
-    </header>
-    <main>
-        <div class="contenedor__todo">
-            <div class="contenedor__login-register">
-                <form action="" class="formulario__register">
-                    <h1 id="eq">Cantidad Económica de Pedidos</h1>
+   </header>
+   <main>
+      <div class="contenedor__todo">
+         <div class="contenedor__login-register">
+            <form action="" class="formulario__register">
+               <h1 id="eq">Cantidad Económica de Pedidos</h1>
 
-                    <section>
-                        <input type="number" id="demand" placeholder="Demanda Diaria">
-                    </section>
+               <section>
+                  <input type="number" id="demand" placeholder="Demanda Diaria">
+               </section>
 
-                    <section>
-                        <input type="number" id="orderCost" placeholder="Costo por Pedido">
-                    </section>
+               <section>
+                  <input type="number" id="orderCost" placeholder="Costo por Pedido">
+               </section>
 
-                    <section>
-                        <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
-                    </section>
+               <section>
+                  <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
+               </section>
 
-                    <button onclick="calculateEOQ(event)">Calcular</button>
-                    <div id="resultado"></div>
-                </form>
+               <button onclick="calculateEOQ(event)">Calcular</button>
+               <button onclick="updateRow()">Actualizar</button>
+               <button onclick="deleteRow()">Eliminar</button>
+               <div id="resultado"></div>
+            </form>
+
+         
             </div>
-        </div>
-    </main>
+         </div>
 
-   <!--=============== MAIN JS ===============-->
-   <script src="../js/calculos_Formulas.js"></script>
+      </div>
+
+      <div id="contenedorTabla">
+         <table id="resultadosTabla" class="resultadosTabla">
+            <thead>
+              <tr>
+                <th>Demanda Diaria</th>
+                <th>Costo por Pedido</th>
+                <th>Costo de Mantenimiento Anual</th>
+                <th>Cantidad Económica de Pedidos</th>
+                <th>Análisis</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+         </table>
+   
+      </div>
+
+   </main>
+
+
+   <!--
+   <footer>
+      <div class="waves">
+         <div class="wave" id="wave1"></div>
+         <div class="wave" id="wave2"></div>
+         <div class="wave" id="wave3"></div>
+         <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social_icon">
+         <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+         <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+         <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+         <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+
+      <ul class="menu">
+         <li><a href="#">Home</a></li>
+         <li><a href="#">About</a></li>
+         <li><a href="#">Servicies</a></li>
+         <li><a href="#">Team</a></li>
+         <li><a href="#">Contact</a></li>
+      </ul>
+      <p>&copy;Todos Los Derechos Reservados 2024.</p>
+   </footer>
+   -->
+
+   <!--=============== MAIN JS ===============
+   <script src="../js/calculos_Formulas.js"></script>-->
+   <script src="../js/EOQ.js"></script>
    <script src="../js/main.js"></script>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

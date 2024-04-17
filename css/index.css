@@ -47,15 +47,17 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
-  /*overflow-y: scroll;  Agrega una barra de desplazamiento vertical siempre */
   background-image: url(..//img/bg4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-
+  margin: 0; /* Elimina el margen exterior */
+  padding: 0; /* Elimina el relleno interno */
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana del navegador */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Apila el contenido en una columna */
+  margin-bottom: 120px; /* Evita que el contenido rebase el footer */
 }
 
 ul {
@@ -267,6 +269,7 @@ footer{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: auto;
 }
 
 footer .social_icon, 
