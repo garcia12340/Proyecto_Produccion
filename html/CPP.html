@@ -208,54 +208,31 @@
         </nav>
 
    </header>
+
    <main>
-        <div class="contenedor__todo">
-            <div class="contenedor__login-register">
-                <form action="" class="formulario__register">
-                    <h1 id="eq">Costo Promedio Por Pieza</h1>
+      <div class="contenedor__todo">
+          <div class="contenedor__login-register">
+              <form action="" class="formulario__register">
+                  <h1 id="eq">Costo Promedio Por Pieza</h1>
 
-                    <section>
-                        <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" required>
-                    </section>
+                  <section>
+                      <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" required>
+                  </section>
 
-                    <section>
-                        <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" required>
-                    </section>
+                  <section>
+                      <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" required>
+                  </section>
 
-                    <section>
-                        <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" required>
-                    </section>
+                  <section>
+                      <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" required>
+                  </section>
 
-                    <button onclick="calcularCPP(event)">Calcular</button>
-                    <div id="resultado"></div>
-                </form>
-            </div>
-        </div>
-   </main>
-
-   <footer>
-      <div class="waves">
-         <div class="wave" id="wave1"></div>
-         <div class="wave" id="wave2"></div>
-         <div class="wave" id="wave3"></div>
-         <div class="wave" id="wave4"></div>
+                  <button onclick="calcularCPP(event)">Calcular</button>
+                  <div id="resultado"></div>
+              </form>
+          </div>
       </div>
-      <ul class="social_icon">
-         <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-      </ul>
-
-      <ul class="menu">
-         <li><a href="#">Home</a></li>
-         <li><a href="#">About</a></li>
-         <li><a href="#">Servicies</a></li>
-         <li><a href="#">Team</a></li>
-         <li><a href="#">Contact</a></li>
-      </ul>
-      <p>&copy;Todos Los Derechos Reservados 2024.</p>
-   </footer>
+   </main>
 
    <!--=============== MAIN JS ===============-->
    <script src="../js/main.js"></script>

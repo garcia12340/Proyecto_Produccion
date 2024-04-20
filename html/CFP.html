@@ -207,67 +207,54 @@
             </div>
         </nav>
 
-    </header>
+   </header>
+
    <main>
-        <div class="contenedor__todo">
-            <div class="contenedor__login-register">
-                <form action="" class="formulario__register">
-                    <h1 id="eq">Costo Fijo Por Pieza</h1>
-
-                    <section>
-                        <input type="number" id="demand" min="1" placeholder="Demanda Anual (D)" required>
-                    </section>
-
-                    <section>
-                        <label for="orderMethod">Método de Cantidad Pedida:</label>
-                        <select id="orderMethod">
-                            <option value="units">Unidades</option>
-                            <option value="percentage">Porcentaje (%)</option>
-                        </select>
-                    </section>
-
-                    <section>
-                        <input type="number" id="orderQuantity" min="1" placeholder="Cantidad Pedida (Q)" required>
-                    </section>
-
-                    <section>
-                        <input type="number" id="safetyStock" min="0" placeholder="Inventario de Seguridad (SS)" required>
-                    </section>
-
-                    <button onclick="calculateCFP(event)">Calcular</button>
-                    <div id="resultado"></div>
-                </form>
-            </div>
-        </div>
+      <div class="containeres">
+         <h1 id="cpf">Costo Fijo Por Pieza</h1>
+         
+         <form id="costForm">
+           <label for="demand">Demanda:</label>
+           <input type="number" id="demand" required>
+           <br>
+           <label for="orderMethod">Método de Pedido:</label>
+           <select id="orderMethod">
+             <option value="percentage">Porcentaje de Demanda</option>
+             <option value="quantity">Cantidad Fija</option>
+           </select>
+           <br>
+           <label for="orderQuantity">Cantidad de Pedido:</label>
+           <input type="number" id="orderQuantity" required>
+           <br>
+           <label for="safetyStock">Stock de Seguridad:</label>
+           <input type="number" id="safetyStock" required>
+           <br>
+           <button type="submit">Calcular</button>
+         </form>
+     
+         <div id="resultado"></div>
+     
+         <table id="recordsTable">
+           <thead>
+             <tr>
+               <th>Demanda</th>
+               <th>Método de Pedido</th>
+               <th>Cantidad de Pedido</th>
+               <th>Stock de Seguridad</th>
+               <th>Resultado</th>
+               <th>Acciones</th>
+             </tr>
+           </thead>
+           <tbody id="recordsBody">
+             <!-- Aquí se insertarán los registros -->
+           </tbody>
+         </table>
+       </div>
    </main>
-
-   <footer>
-      <div class="waves">
-         <div class="wave" id="wave1"></div>
-         <div class="wave" id="wave2"></div>
-         <div class="wave" id="wave3"></div>
-         <div class="wave" id="wave4"></div>
-      </div>
-      <ul class="social_icon">
-         <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-      </ul>
-
-      <ul class="menu">
-         <li><a href="#">Home</a></li>
-         <li><a href="#">About</a></li>
-         <li><a href="#">Servicies</a></li>
-         <li><a href="#">Team</a></li>
-         <li><a href="#">Contact</a></li>
-      </ul>
-      <p>&copy;Todos Los Derechos Reservados 2024.</p>
-   </footer>
 
    <!--=============== MAIN JS ===============-->
    <script src="../js/main.js"></script>
-   <script src="../js/calculos_Formulas.js"></script>
+   <script src="../js/costofijo_Piezas.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

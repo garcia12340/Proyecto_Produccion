@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,287 +8,356 @@
    <!--=============== REMIXICONS ===============-->
    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
    <link rel="stylesheet" href="../css/index.css">
-   <link rel="stylesheet" href="..//css/cantidad_Pedidos.css">
+   <link rel="stylesheet" href="../css/eoq.css">
 </head>
+
 <body>
-    <!--=============== HEADER ===============-->
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav__data">
-               <a href="../index.html" class="nav__logo">
-                  <i class="ri-planet-line"></i> Company
-               </a>
-               
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-line nav__burger"></i>
-                  <i class="ri-close-line nav__close"></i>
-               </div>
-            </div>
-               
-            <!--=============== NAV MENU ===============-->
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li><a href="../index.html" class="nav__link">Home</a></li>
+   <!--=============== HEADER ===============-->
+   <header class="header">
+      <nav class="nav container">
+         <div class="nav__data">
+            <a href="../index.html" class="nav__logo">
+               <i class="ri-planet-line"></i> Company
+            </a>
 
-                  <!--=============== DROPDOWN 1 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
-
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="../html/CMC.html" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
-                           </a>                          
-                        </li>
-
-                        <li>
-                           <a href="../html/EOQ.html" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> EOQ
-                           </a>
-                        </li>
-
-                        <!--=============== DROPDOWN SUBMENU ===============-->
-                        <li class="dropdown__subitem">
-                           <div class="dropdown__link">
-                              <i class="ri-bar-chart-line"></i> Control de Inventario <i class="ri-add-line dropdown__add"></i>
-                           </div>
-
-                           <ul class="dropdown__submenu">
-                              <li>
-                                 <a href="../html/CFP.html" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="../html/CPP.html" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Refunds
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </li>
-
-                  <!--=============== DROPDOWN 2 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
-
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> Overview
-                           </a>                          
-                        </li>
-
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> Transactions
-                           </a>
-                        </li>
-
-                        <!--=============== DROPDOWN SUBMENU ===============-->
-                        <li class="dropdown__subitem">
-                           <div class="dropdown__link">
-                              <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
-                           </div>
-
-                           <ul class="dropdown__submenu">
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-file-list-line"></i> Documents
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-cash-line"></i> Payments
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Refunds
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                     </ul>
-
-                  </li>
-
-                  <!--=============== DROPDOWN 3 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
-
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
-                           </a>                          
-                        </li>
-
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> EOQ
-                           </a>
-                        </li>
-
-                        <!--=============== DROPDOWN SUBMENU ===============-->
-                        <li class="dropdown__subitem">
-                           <div class="dropdown__link">
-                              <i class="ri-bar-chart-line"></i> Control de Inventario <i class="ri-add-line dropdown__add"></i>
-                           </div>
-
-                           <ul class="dropdown__submenu">
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Refunds
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                     </ul>
-
-                  </li>
-
-                  <!--=============== DROPDOWN 4 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
-
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-user-line"></i> Profiles
-                           </a>                          
-                        </li>
-
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-lock-line"></i> Accounts
-                           </a>
-                        </li>
-
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-message-3-line"></i> Messages
-                           </a>
-                        </li>
-                     </ul>
-                  </li>
-
-                  <li><a href="#" class="nav__link">Contact</a></li>
-               </ul>
-            </div>
-        </nav>
-
-   </header>
-   <main>
-      <div class="contenedor__todo">
-         <div class="contenedor__login-register">
-            <form action="" class="formulario__register">
-               <h1 id="eq">Cantidad Económica de Pedidos</h1>
-
-               <section>
-                  <input type="number" id="demand" placeholder="Demanda Diaria">
-               </section>
-
-               <section>
-                  <input type="number" id="orderCost" placeholder="Costo por Pedido">
-               </section>
-
-               <section>
-                  <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
-               </section>
-
-               <button onclick="calculateEOQ(event)">Calcular</button>
-               <button onclick="updateRow()">Actualizar</button>
-               <button onclick="deleteRow()">Eliminar</button>
-               <div id="resultado"></div>
-            </form>
-
-         
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line nav__burger"></i>
+               <i class="ri-close-line nav__close"></i>
             </div>
          </div>
 
-      </div>
+         <!--=============== NAV MENU ===============-->
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="../index.html" class="nav__link">Home</a></li>
 
-      <div id="contenedorTabla">
-         <table id="resultadosTabla" class="resultadosTabla">
-            <thead>
-              <tr>
-                <th>Demanda Diaria</th>
-                <th>Costo por Pedido</th>
-                <th>Costo de Mantenimiento Anual</th>
-                <th>Cantidad Económica de Pedidos</th>
-                <th>Análisis</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
+               <!--=============== DROPDOWN 1 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
+
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="../html/CMC.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="../html/EOQ.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> EOQ
+                        </a>
+                     </li>
+
+                     <!--=============== DROPDOWN SUBMENU ===============-->
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Control de Inventario <i
+                              class="ri-add-line dropdown__add"></i>
+                        </div>
+
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="../html/CFP.html" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="../html/CPP.html" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Refunds
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+
+               <!--=============== DROPDOWN 2 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
+
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Overview
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> Transactions
+                        </a>
+                     </li>
+
+                     <!--=============== DROPDOWN SUBMENU ===============-->
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                        </div>
+
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-file-list-line"></i> Documents
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-cash-line"></i> Payments
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Refunds
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+
+               </li>
+
+               <!--=============== DROPDOWN 3 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
+
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> EOQ
+                        </a>
+                     </li>
+
+                     <!--=============== DROPDOWN SUBMENU ===============-->
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Control de Inventario <i
+                              class="ri-add-line dropdown__add"></i>
+                        </div>
+
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Refunds
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+
+               </li>
+
+               <!--=============== DROPDOWN 4 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
+
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-user-line"></i> Profiles
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-lock-line"></i> Accounts
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-message-3-line"></i> Messages
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+
+               <li><a href="#" class="nav__link">Contact</a></li>
+            </ul>
+         </div>
+      </nav>
+
+   </header>
+
+   <main>
+      <div class="containere">
+         <h1 id="eq">EOQ</h1>
+         <form id="crud-form">
+             <input type="text" id="demand" placeholder="Demanda">
+             <input type="text" id="order-cost" placeholder="Costo de Orden">
+             <input type="text" id="holding-cost" placeholder="Costo de Mantenimiento">
+             <button type="submit">Agregar</button>
+             <button id="print-pdf">Descargar PDF</button>
+         </form>
+         <table id="data-table">
+             <thead>
+                 <tr>
+                     <th class="demand">Demanda</th>
+                     <th>Costo de Orden</th>
+                     <th>Costo de Mantenimiento</th>
+                     <th class="eoq">EOQ</th>
+                     <th>Análisis</th>
+                     <th>Acciones</th>
+                 </tr>
+             </thead>
+             <tbody id="data-body">
+                 <!-- Aquí se insertarán los registros -->
+             </tbody>
          </table>
-   
-      </div>
-
+     </div>
    </main>
 
 
-   <!--
-   <footer>
-      <div class="waves">
-         <div class="wave" id="wave1"></div>
-         <div class="wave" id="wave2"></div>
-         <div class="wave" id="wave3"></div>
-         <div class="wave" id="wave4"></div>
-      </div>
-      <ul class="social_icon">
-         <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-         <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-      </ul>
-
-      <ul class="menu">
-         <li><a href="#">Home</a></li>
-         <li><a href="#">About</a></li>
-         <li><a href="#">Servicies</a></li>
-         <li><a href="#">Team</a></li>
-         <li><a href="#">Contact</a></li>
-      </ul>
-      <p>&copy;Todos Los Derechos Reservados 2024.</p>
-   </footer>
-   -->
-
    <!--=============== MAIN JS ===============
    <script src="../js/calculos_Formulas.js"></script>-->
-   <script src="../js/EOQ.js"></script>
+
+   <script>
+      // Función para calcular EOQ
+      function calculateEOQ(demand, orderCost, holdingCost) {
+         return Math.sqrt((2 * demand * (365) * orderCost) / holdingCost);
+      }
+
+      // Función para agregar un nuevo registro
+      function addRecord(demand, orderCost, holdingCost, eoq, isPdfDownload = false) {
+         if (!isPdfDownload) {
+            const tableBody = document.getElementById("data-body");
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                    <td class="demand">${demand}</td>
+                    <td>${orderCost}</td>
+                    <td>${holdingCost}</td>
+                    <td class="eoq">${eoq.toFixed(0)}</td>
+                    <td>${analyzeEOQ(eoq)}</td>
+                    <td>
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                    </td>
+                `;
+            tableBody.appendChild(newRow);
+         }
+      }
+
+      // Función para eliminar un registro
+      function deleteRecord(event) {
+         if (event.target.classList.contains("delete")) {
+            const row = event.target.closest("tr");
+            row.remove();
+            updateLocalStorage();
+         }
+      }
+
+      // Función para editar un registro
+      function editRecord(event) {
+         if (event.target.classList.contains("edit")) {
+            const row = event.target.closest("tr");
+            const cells = row.querySelectorAll("td");
+
+            const demand = parseFloat(cells[0].innerText);
+            const orderCost = parseFloat(cells[1].innerText);
+            const holdingCost = parseFloat(cells[2].innerText);
+
+            document.getElementById("demand").value = demand;
+            document.getElementById("order-cost").value = orderCost;
+            document.getElementById("holding-cost").value = holdingCost;
+
+            row.remove();
+            updateLocalStorage();
+         }
+      }
+
+      // Función para analizar el resultado EOQ
+      function analyzeEOQ(eoq) {
+         const eoqValue = parseFloat(eoq);
+         return `La cantidad de pedidos que la empresa deberá realizar es de ${eoqValue.toFixed(0)} unidades para que el inventario no se agote durante el tiempo de entrega.`;
+      }
+
+      // Actualizar los datos en localStorage después de eliminar o editar un registro
+      function updateLocalStorage() {
+         const tableRows = document.querySelectorAll("#data-body tr");
+         const records = [];
+         tableRows.forEach(row => {
+            const cells = row.querySelectorAll("td");
+            const demand = parseFloat(cells[0].innerText);
+            const orderCost = parseFloat(cells[1].innerText);
+            const holdingCost = parseFloat(cells[2].innerText);
+            const eoq = parseFloat(cells[3].innerText);
+            records.push({ demand, orderCost, holdingCost, eoq });
+         });
+         localStorage.setItem("records", JSON.stringify(records));
+      }
+
+      // Manejo del evento submit del formulario
+      document.getElementById("crud-form").addEventListener("submit", function (event) {
+         event.preventDefault();
+
+         const demand = parseFloat(document.getElementById("demand").value);
+         const orderCost = parseFloat(document.getElementById("order-cost").value);
+         const holdingCost = parseFloat(document.getElementById("holding-cost").value);
+
+         const eoq = calculateEOQ(demand, orderCost, holdingCost);
+
+         addRecord(demand, orderCost, holdingCost, eoq);
+
+         // Guardar en localStorage
+         let records = JSON.parse(localStorage.getItem("records")) || [];
+         records.push({ demand, orderCost, holdingCost, eoq });
+         localStorage.setItem("records", JSON.stringify(records));
+
+         // Limpiar campos del formulario
+         this.reset();
+      });
+
+      // Manejo del evento click en los botones editar y eliminar
+      document.getElementById("data-table").addEventListener("click", function (event) {
+         editRecord(event);
+         deleteRecord(event);
+      });
+
+      // Cargar registros guardados en localStorage al cargar la página
+      window.addEventListener("DOMContentLoaded", function () {
+         const records = JSON.parse(localStorage.getItem("records")) || [];
+         records.forEach(record => {
+            addRecord(record.demand, record.orderCost, record.holdingCost, record.eoq);
+         });
+      });
+   </script>
    <script src="../js/main.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
