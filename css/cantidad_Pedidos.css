@@ -19,7 +19,16 @@ body{
   
 }
 */
+#resultadosTabla{
+    color: white;
+    text-align: center;
+}
 
+.tabla_resultados:hover{
+    text-align: center;
+    background-color: inherit;
+    color: #46A2FD;
+}
 main{
     width: 100%;
     padding: 20px;
