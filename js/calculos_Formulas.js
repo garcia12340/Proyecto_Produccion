@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
       var numeroFallas = horas / MTBF;
 
       // Calcular el costo correctivo
-      var costoCorrectivo = numeroFallas.toFixed(0) * ((duracion * costoHora + repuestos + costosOperacionales + retrasoLogistico) + (duracion * costoUnitario + costosFallas));
+      // Corregi la formula del mant correctivo para cuando tenemos el retraso logistico
+      var costoCorrectivo = numeroFallas.toFixed(0) * ((duracion * costoHora + repuestos + costosOperacionales) + ((duracion+retrasoLogistico)* costoUnitario + costosFallas));
+
 
       // Realizar el análisis en texto
       var analisis = "Basado en los datos ingresados, se estima que habrá aproximadamente " + numeroFallas.toFixed(0) + " fallas durante el tiempo de mantenimiento. Estas fallas tienen un costo total estimado de $" + costoCorrectivo.toFixed(0) + ".";
@@ -83,7 +85,7 @@ function calculateCFP() {
   var inventoryTurnover = demand / averageInventory;
   
   document.getElementById('resultado').innerHTML = "<p>Nivel de Inventario Promedio: " + averageInventory.toFixed(0) + " unidades</p>" +
-                                                 "<p>Rotación de Inventario: " + inventoryTurnover.toFixed(0) + " veces al año</p>";
+                                                    "<p>Rotación de Inventario: " + inventoryTurnover.toFixed(0) + " veces al año</p>";
 }
 
 //Formula de Costo Promedio Por Pieza

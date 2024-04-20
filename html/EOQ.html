@@ -214,29 +214,47 @@
    </header>
 
    <main>
-      <div class="containere">
-         <h1 id="eq">EOQ</h1>
-         <form id="crud-form">
-             <input type="text" id="demand" placeholder="Demanda">
-             <input type="text" id="order-cost" placeholder="Costo de Orden">
-             <input type="text" id="holding-cost" placeholder="Costo de Mantenimiento">
-             <button type="submit">Agregar</button>
-             <button id="print-pdf">Descargar PDF</button>
-         </form>
-         <table id="data-table">
-             <thead>
-                 <tr>
-                     <th class="demand">Demanda</th>
-                     <th>Costo de Orden</th>
-                     <th>Costo de Mantenimiento</th>
-                     <th class="eoq">EOQ</th>
-                     <th>Análisis</th>
-                     <th>Acciones</th>
-                 </tr>
-             </thead>
-             <tbody id="data-body">
-                 <!-- Aquí se insertarán los registros -->
-             </tbody>
+      <div class="contenedor__todo">
+         <div class="contenedor__login-register">
+            <form action="" class="formulario__register">
+               <h1 id="eq">Cantidad Económica de Pedidos</h1>
+
+               <section>
+                  <input type="number" id="demand" placeholder="Demanda Diaria">
+               </section>
+
+               <section>
+                  <input type="number" id="orderCost" placeholder="Costo por Pedido">
+               </section>
+
+               <section>
+                  <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
+               </section>
+
+               <button onclick="calculateEOQ(event)">Calcular</button>
+               <button onclick="updateRow()">Actualizar</button>
+               <button onclick="deleteRow()">Eliminar</button>
+               <div id="resultado"></div>
+            </form>
+
+         
+            </div>
+         </div>
+
+      </div>
+
+      <div id="contenedorTabla">
+         <table id="resultadosTabla" class="resultadosTabla">
+            <thead>
+              <tr>
+                <th>Demanda Diaria</th>
+                <th>Costo por Pedido</th>
+                <th>Costo de Mantenimiento Anual</th>
+                <th>Cantidad Económica de Pedidos</th>
+                <th>Análisis</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
          </table>
      </div>
    </main>
