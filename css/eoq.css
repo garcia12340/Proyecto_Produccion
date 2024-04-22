@@ -19,13 +19,12 @@ h1 {
 }
 
 form input {
-    border: none;
-    margin-bottom: 10px;
-    padding: 5px;
-    background: #b9bdbd ;
-    width: calc(33.33% - 10px);
-    outline: none;
-    border-radius: 10px 20px 30px 40px; /* Cambia los valores según tu preferencia */
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 form button {

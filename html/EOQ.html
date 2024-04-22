@@ -214,165 +214,36 @@
    </header>
 
    <main>
-      <div class="contenedor__todo">
-         <div class="contenedor__login-register">
-            <form action="" class="formulario__register">
-               <h1 id="eq">Cantidad Económica de Pedidos</h1>
-
-               <section>
-                  <input type="number" id="demand" placeholder="Demanda Diaria">
-               </section>
-
-               <section>
-                  <input type="number" id="orderCost" placeholder="Costo por Pedido">
-               </section>
-
-               <section>
-                  <input type="number" id="holdingCost" placeholder="Costo de Mantenimiento Anual">
-               </section>
-
-               <button onclick="calculateEOQ(event)">Calcular</button>
-               <button onclick="updateRow()">Actualizar</button>
-               <button onclick="deleteRow()">Eliminar</button>
-               <div id="resultado"></div>
-            </form>
-
-         
-            </div>
-         </div>
-
-      </div>
-
-      <div id="contenedorTabla">
-         <table id="resultadosTabla" class="resultadosTabla">
-            <thead>
-              <tr>
-                <th>Demanda Diaria</th>
-                <th>Costo por Pedido</th>
-                <th>Costo de Mantenimiento Anual</th>
-                <th>Cantidad Económica de Pedidos</th>
-                <th>Análisis</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
+      <div class="containere">
+         <h1 id="eq">EOQ</h1>
+         <form id="crud-form">
+             <input type="text" id="demand" placeholder="Demanda">
+             <input type="text" id="order-cost" placeholder="Costo de Orden">
+             <input type="text" id="holding-cost" placeholder="Costo de Mantenimiento">
+             <button type="submit">Agregar</button>
+             <button id="print-pdf">Descargar PDF</button>
+         </form>
+         <table id="data-table">
+             <thead>
+                 <tr>
+                     <th class="demand">Demanda</th>
+                     <th>Costo de Orden</th>
+                     <th>Costo de Mantenimiento</th>
+                     <th class="eoq">EOQ</th>
+                     <th>Análisis</th>
+                     <th>Acciones</th>
+                 </tr>
+             </thead>
+             <tbody id="data-body">
+                 <!-- Aquí se insertarán los registros -->
+             </tbody>
          </table>
-     </div>
    </main>
 
 
    <!--=============== MAIN JS ===============
    <script src="../js/calculos_Formulas.js"></script>-->
-
-   <script>
-      // Función para calcular EOQ
-      function calculateEOQ(demand, orderCost, holdingCost) {
-         return Math.sqrt((2 * demand * (365) * orderCost) / holdingCost);
-      }
-
-      // Función para agregar un nuevo registro
-      function addRecord(demand, orderCost, holdingCost, eoq, isPdfDownload = false) {
-         if (!isPdfDownload) {
-            const tableBody = document.getElementById("data-body");
-            const newRow = document.createElement("tr");
-            newRow.innerHTML = `
-                    <td class="demand">${demand}</td>
-                    <td>${orderCost}</td>
-                    <td>${holdingCost}</td>
-                    <td class="eoq">${eoq.toFixed(0)}</td>
-                    <td>${analyzeEOQ(eoq)}</td>
-                    <td>
-                        <button class="edit">Editar</button>
-                        <button class="delete">Eliminar</button>
-                    </td>
-                `;
-            tableBody.appendChild(newRow);
-         }
-      }
-
-      // Función para eliminar un registro
-      function deleteRecord(event) {
-         if (event.target.classList.contains("delete")) {
-            const row = event.target.closest("tr");
-            row.remove();
-            updateLocalStorage();
-         }
-      }
-
-      // Función para editar un registro
-      function editRecord(event) {
-         if (event.target.classList.contains("edit")) {
-            const row = event.target.closest("tr");
-            const cells = row.querySelectorAll("td");
-
-            const demand = parseFloat(cells[0].innerText);
-            const orderCost = parseFloat(cells[1].innerText);
-            const holdingCost = parseFloat(cells[2].innerText);
-
-            document.getElementById("demand").value = demand;
-            document.getElementById("order-cost").value = orderCost;
-            document.getElementById("holding-cost").value = holdingCost;
-
-            row.remove();
-            updateLocalStorage();
-         }
-      }
-
-      // Función para analizar el resultado EOQ
-      function analyzeEOQ(eoq) {
-         const eoqValue = parseFloat(eoq);
-         return `La cantidad de pedidos que la empresa deberá realizar es de ${eoqValue.toFixed(0)} unidades para que el inventario no se agote durante el tiempo de entrega.`;
-      }
-
-      // Actualizar los datos en localStorage después de eliminar o editar un registro
-      function updateLocalStorage() {
-         const tableRows = document.querySelectorAll("#data-body tr");
-         const records = [];
-         tableRows.forEach(row => {
-            const cells = row.querySelectorAll("td");
-            const demand = parseFloat(cells[0].innerText);
-            const orderCost = parseFloat(cells[1].innerText);
-            const holdingCost = parseFloat(cells[2].innerText);
-            const eoq = parseFloat(cells[3].innerText);
-            records.push({ demand, orderCost, holdingCost, eoq });
-         });
-         localStorage.setItem("records", JSON.stringify(records));
-      }
-
-      // Manejo del evento submit del formulario
-      document.getElementById("crud-form").addEventListener("submit", function (event) {
-         event.preventDefault();
-
-         const demand = parseFloat(document.getElementById("demand").value);
-         const orderCost = parseFloat(document.getElementById("order-cost").value);
-         const holdingCost = parseFloat(document.getElementById("holding-cost").value);
-
-         const eoq = calculateEOQ(demand, orderCost, holdingCost);
-
-         addRecord(demand, orderCost, holdingCost, eoq);
-
-         // Guardar en localStorage
-         let records = JSON.parse(localStorage.getItem("records")) || [];
-         records.push({ demand, orderCost, holdingCost, eoq });
-         localStorage.setItem("records", JSON.stringify(records));
-
-         // Limpiar campos del formulario
-         this.reset();
-      });
-
-      // Manejo del evento click en los botones editar y eliminar
-      document.getElementById("data-table").addEventListener("click", function (event) {
-         editRecord(event);
-         deleteRecord(event);
-      });
-
-      // Cargar registros guardados en localStorage al cargar la página
-      window.addEventListener("DOMContentLoaded", function () {
-         const records = JSON.parse(localStorage.getItem("records")) || [];
-         records.forEach(record => {
-            addRecord(record.demand, record.orderCost, record.holdingCost, record.eoq);
-         });
-      });
-   </script>
+   <script src="../js/EOQ2.js"></script>
    <script src="../js/main.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
