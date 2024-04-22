@@ -1,7 +1,23 @@
 // Función para calcular EOQ
+/*
 function calculateEOQ(demand, orderCost, holdingCost) {
     return Math.sqrt((2 * demand * (365) * orderCost) / holdingCost);
 }
+*/
+// Función para calcular EOQ
+function calculateEOQ(demand, orderCost, holdingCost) {
+    // Validar que los valores sean numéricos y no sean ni null ni undefined
+    if (isNaN(demand) || demand == null || isNaN(orderCost) || orderCost == null || isNaN(holdingCost) || holdingCost == null) {
+        console.error("Error: Alguno de los valores de entrada no es válido.");
+        return null; // Retorna null para indicar un error en el cálculo
+    }
+
+    // Proceder con el cálculo si las entradas son válidas
+    return Math.sqrt((2 * demand * 365 * orderCost) / holdingCost);
+}
+
+
+
 
 // Función para agregar un nuevo registro
 function addRecord(demand, orderCost, holdingCost, eoq, isPdfDownload = false) {
@@ -101,8 +117,15 @@ document.getElementById("data-table").addEventListener("click", function (event)
 
 // Cargar registros guardados en localStorage al cargar la página
 window.addEventListener("DOMContentLoaded", function () {
+    // Intenta obtener los registros desde localStorage o establece un arreglo vacío si no hay ninguno
     const records = JSON.parse(localStorage.getItem("records")) || [];
+
+    // Verificar si realmente estamos obteniendo registros
+    console.log("Registros cargados:", records);
+
+    // Agrega cada registro al cuerpo de la tabla
     records.forEach(record => {
-        addRecord(record.demand, record.orderCost, record.holdingCost, record.eoq);
+        const eoqCalculated = calculateEOQ(record.demand, record.orderCost, record.holdingCost);
+        addRecord(record.demand, record.orderCost, record.holdingCost, eoqCalculated);
     });
 });

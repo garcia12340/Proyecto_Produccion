@@ -13,6 +13,11 @@ function calculateCFP() {
     var orderQuantity = parseInt(document.getElementById('orderQuantity').value);
     var safetyStock = parseInt(document.getElementById('safetyStock').value);
 
+    if (isNaN(demand) || isNaN(orderQuantity) || isNaN(safetyStock)) {
+        console.error("Algunos campos están vacíos o no son válidos");
+        return; // No continuar si alguno de los valores es NaN
+    }
+
     var orderQuantityCalculated = 0;
     if (orderMethod === 'percentage') {
         orderQuantityCalculated = orderQuantity * demand / 100;
@@ -30,7 +35,13 @@ function calculateCFP() {
     saveRecordToStorage(demand, orderMethod, orderQuantity, safetyStock, resultadoHTML);
 }
 
+
 function saveRecordToStorage(demand, orderMethod, orderQuantity, safetyStock, resultadoHTML) {
+    if (!demand || !orderQuantity || !safetyStock) {
+        console.error("Algunos campos están vacíos o no son válidos");
+        return; // No guardar registros si falta información
+    }
+
     var record = {
         demand: demand,
         orderMethod: orderMethod,
@@ -46,8 +57,26 @@ function saveRecordToStorage(demand, orderMethod, orderQuantity, safetyStock, re
     displayRecords(records);
 }
 
+/*
+function saveRecordToStorage(demand, orderMethod, orderQuantity, safetyStock, resultadoHTML) {
+    var record = {
+        demand: demand,
+        orderMethod: orderMethod,
+        orderQuantity: orderQuantity,
+        safetyStock: safetyStock,
+        resultado: resultadoHTML
+    };
+
+    var records = JSON.parse(localStorage.getItem('records')) || [];
+    records.push(record);
+    localStorage.setItem('records', JSON.stringify(records));
+
+    displayRecords(records);
+}
+*/
 function loadRecordsFromStorage() {
     var records = JSON.parse(localStorage.getItem('records')) || [];
+    console.log("Cargados de localStorage:", records);
     displayRecords(records);
 }
 
