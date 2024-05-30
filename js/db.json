@@ -6,6 +6,13 @@
       "orderCost": 10,
       "holdingCost": 0.52,
       "eoq": 917.773224880576
+    },
+    {
+      "id": "3248f76d-9cb8-423c-83b8-9463183f9ff6",
+      "demand": 50,
+      "orderCost": 3,
+      "holdingCost": 0.5,
+      "eoq": 467.9743582719036
     }
   ]
 }
