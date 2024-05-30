@@ -1,0 +1,11 @@
+{
+  "cantidad_Pedido": [
+    {
+      "id": "61e49465-437e-441f-a31b-1a80022a4f54",
+      "demand": 60,
+      "orderCost": 10,
+      "holdingCost": 0.52,
+      "eoq": 917.773224880576
+    }
+  ]
+}

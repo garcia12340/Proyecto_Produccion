@@ -216,7 +216,7 @@
    <main>
       <div class="containere">
          <h1 id="eq">EOQ</h1>
-         <form id="crud-form">
+         <form id="crud-form" method="POST">
              <input type="text" id="demand" placeholder="Demanda">
              <input type="text" id="order-cost" placeholder="Costo de Orden">
              <input type="text" id="holding-cost" placeholder="Costo de Mantenimiento">
@@ -226,6 +226,7 @@
          <table id="data-table">
              <thead>
                  <tr>
+
                      <th class="demand">Demanda</th>
                      <th>Costo de Orden</th>
                      <th>Costo de Mantenimiento</th>
@@ -242,8 +243,9 @@
 
 
    <!--=============== MAIN JS ===============
-   <script src="../js/calculos_Formulas.js"></script>-->
-   <script src="../js/EOQ2.js"></script>
+   <script src="../js/calculos_Formulas.js"></script>
+   <script src="../js/EOQ2.js"></script>-->
+   <script src="../js/eoq_bd.js"></script>
    <script src="../js/main.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
