@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Calcular el costo correctivo
       // Corregi la formula del mant correctivo para cuando tenemos el retraso logistico
-      var costoCorrectivo = numeroFallas.toFixed(0) * ((duracion * costoHora + repuestos + costosOperacionales) + ((duracion+retrasoLogistico)* costoUnitario + costosFallas));
+      var costoCorrectivo = numeroFallas.toFixed(0) * ((duracion * costoHora + repuestos + costosOperacionales+retrasoLogistico) + (duracion* costoUnitario + costosFallas));
 
 
       // Realizar el análisis en texto
