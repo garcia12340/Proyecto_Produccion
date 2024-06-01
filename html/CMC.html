@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,213 +11,238 @@
    <link rel="stylesheet" href="..//css/mantenimento_Correctivo.css">
 
 </head>
+
 <body>
-    <!--=============== HEADER ===============-->
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav__data">
-               <a href="../index.html" class="nav__logo">
-                  <i class="ri-planet-line"></i> Company
-               </a>
-               
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-line nav__burger"></i>
-                  <i class="ri-close-line nav__close"></i>
-               </div>
+   <!--=============== HEADER ===============-->
+   <header class="header">
+      <nav class="nav container">
+         <div class="nav__data">
+            <a href="../index.html" class="nav__logo">
+               <i class="ri-planet-line"></i> Company
+            </a>
+
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line nav__burger"></i>
+               <i class="ri-close-line nav__close"></i>
             </div>
-               
-            <!--=============== NAV MENU ===============-->
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li><a href="../index.html" class="nav__link">Home</a></li>
+         </div>
 
-                  <!--=============== DROPDOWN 1 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+         <!--=============== NAV MENU ===============-->
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="../index.html" class="nav__link">Home</a></li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="../html/CMC.html" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
-                           </a>                          
-                        </li>
+               <!--=============== DROPDOWN 1 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                        <li>
-                           <a href="../html/EOQ.html" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> EOQ
-                           </a>
-                        </li>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="../html/CMC.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
+                        </a>
+                     </li>
 
-                        <!--=============== DROPDOWN SUBMENU ===============-->
-                        <li class="dropdown__subitem">
-                           <div class="dropdown__link">
-                              <i class="ri-bar-chart-line"></i> Control de Inventario <i class="ri-add-line dropdown__add"></i>
-                           </div>
+                     <li>
+                        <a href="../html/EOQ.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> EOQ
+                        </a>
+                     </li>
 
-                           <ul class="dropdown__submenu">
-                              <li>
-                                 <a href="../html/CFP.html" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="../html/CPP.html" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Refunds
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </li>
+                     <!--=============== DROPDOWN SUBMENU ===============-->
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Control de Inventario <i
+                              class="ri-add-line dropdown__add"></i>
+                        </div>
 
-                  <!--=============== DROPDOWN 2 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        MRP <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="../html/CFP.html" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
+                              </a>
+                           </li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> Diagrama 1
-                           </a>                          
-                        </li>
+                           <li>
+                              <a href="../html/CPP.html" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
+                              </a>
+                           </li>
 
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> Diagrama 2
-                           </a>
-                        </li>
-                     </ul>
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Refunds
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
 
-                  </li>
+               <!--=============== DROPDOWN 2 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     MRP <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                  <!--=============== DROPDOWN 3 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        LTC - LUC <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Diagrama 1
+                        </a>
+                     </li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="../html/LTC.html" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> LTC
-                           </a>                          
-                        </li>
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> Diagrama 2
+                        </a>
+                     </li>
+                  </ul>
 
-                        <li>
-                           <a href="../html/LUC.html" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> LUC
-                           </a>
-                        </li>
-                     </ul>
+               </li>
 
-                  </li>
+               <!--=============== DROPDOWN 3 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     LTC - LUC <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                  <!--=============== DROPDOWN 4 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="../html/LTC.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> LTC
+                        </a>
+                     </li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-user-line"></i> Profiles
-                           </a>                          
-                        </li>
+                     <li>
+                        <a href="../html/LUC.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> LUC
+                        </a>
+                     </li>
+                  </ul>
 
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-lock-line"></i> Accounts
-                           </a>
-                        </li>
+               </li>
 
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-message-3-line"></i> Messages
-                           </a>
-                        </li>
-                     </ul>
-                  </li>
+               <!--=============== DROPDOWN 4 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                  <li><a href="#" class="nav__link">Contact</a></li>
-               </ul>
-            </div>
-        </nav>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-user-line"></i> Profiles
+                        </a>
+                     </li>
 
-    </header>
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-lock-line"></i> Accounts
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-message-3-line"></i> Messages
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+
+               <li><a href="#" class="nav__link">Contact</a></li>
+            </ul>
+         </div>
+      </nav>
+
+   </header>
 
    <main>
-        <div class="contenedor__todo">
-            <div class="contenedor__login-register">
-                <form id="formulario" class="formulario__register">
-                    <h1 id="mc">Mantenimiento Correctivo</h1>
-                    <section>
-                        <input type="number" id="horas" placeholder="Horas Kilométradas" required>
-                    </section>
+      <div class="contenedor__todo">
+         <h1 id="mc">Mantenimiento Correctivo</h1>
+         <form id="formulario" class="formulario__register">
+            <section>
+               <input type="number" id="horas" placeholder="Horas Kilométradas" required>
+            </section>
 
-                    <section>
-                        <label for="mtbf">MTBF:</label>
-                        <select id="mtbf">
-                            <option value="hours">Horas</option>
-                            <option value="percentage">Porcentaje</option>
-                        </select>
-                    </section>
+            <section>
+               <label for="mtbf">MTBF:</label>
+               <select id="mtbf">
+                  <option value="hours">Horas</option>
+                  <option value="percentage">Porcentaje</option>
+               </select>
+            </section>
 
-                    <section>
-                        <input type="number" id="valorMtbf" placeholder="Valor de MTBF" required>
-                    </section>
+            <section>
+               <input type="number" id="valorMtbf" placeholder="Valor de MTBF" required>
+            </section>
 
-                    <section>
-                        <input type="number" id="duracion" placeholder="Duracion Tarea (Horas)">
-                    </section>
+            <section>
+               <input type="number" id="duracion" placeholder="Duracion Tarea (Horas)">
+            </section>
 
-                    <section>
-                        <input type="number" id="costoHora" placeholder="Costo Por Hora de Trabajo ($)">
-                    </section>
+            <section>
+               <input type="number" id="costoHora" placeholder="Costo Por Hora de Trabajo ($)">
+            </section>
 
-                    <section>
-                        <input type="number" id="repuestos" placeholder="Respuestos ($)">
-                    </section>
+            <section>
+               <input type="number" id="repuestos" placeholder="Respuestos ($)">
+            </section>
 
-                    <section>
-                        <input type="number" id="costosOperacionales" placeholder="Costo de Tareas Operacionales ($)">
-                    </section>
+            <section>
+               <input type="number" id="costosOperacionales" placeholder="Costo de Tareas Operacionales ($)">
+            </section>
 
-                    <section>
-                        <input type="number" id="retrasoLogistico" placeholder="Retraso Logístico ($)">
-                    </section>
+            <section>
+               <input type="number" id="retrasoLogistico" placeholder="Retraso Logístico ($)">
+            </section>
 
-                    <section>
-                        <input type="number" id="costoUnitario" placeholder="Costo Unitario por Parada ($/hora)">
-                    </section>
+            <section>
+               <input type="number" id="costoUnitario" placeholder="Costo Unitario por Parada ($/hora)">
+            </section>
 
-                    <section>
-                        <input type="number" id="costosFallas" placeholder="Costos de Falla de Vez Única ($)">
-                    </section>
+            <section>
+               <input type="number" id="costosFallas" placeholder="Costos de Falla de Vez Única ($)">
+            </section>
 
-                    <button id="calcularButton">Calcular</button>
-                    <div id="resultado"></div>
-                </form>
-            </div>
-        </div>
+            <button id="calcularButton">Calcular</button>
+            <div id="resultado"></div>
+         </form>
+
+         <table id="crmTable">
+            <thead>
+               <tr>
+                  <th class="col-horas">Horas</th>
+                  <th class="col-mtbf">MTBF</th>
+                  <th class="col-valorMtbf">Valor MTBF</th>
+                  <th class="col-duracion">Duración</th>
+                  <th class="col-costoHora">Costo/Hora</th>
+                  <th class="col-repuestos">Repuestos</th>
+                  <th class="col-costosOperacionales">Costos Operacionales</th>
+                  <th class="col-retrasoLogistico">Retraso Logístico</th>
+                  <th class="col-costoUnitario">Costo Unitario</th>
+                  <th class="col-costosFallas">Costos Fallas</th>
+                  <th class="cmc1">MC</th>
+                  <th>Análisis</th>
+                  <th class="col-acciones">Acciones</th>
+               </tr>
+            </thead>
+            <tbody id="data-cmc">
+               <!-- Aquí se insertarán los registros -->
+            </tbody>
+         </table>
+
+      </div>
    </main>
 
 
    <!--=============== MAIN JS ===============-->
    <script src="../js/main.js"></script>
-   <script src="../js/calculos_Formulas.js"></script>
+   <script src="../js/calculos_mantenimientoCorrectivo.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

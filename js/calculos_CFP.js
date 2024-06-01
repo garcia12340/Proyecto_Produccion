@@ -57,23 +57,6 @@ function saveRecordToStorage(demand, orderMethod, orderQuantity, safetyStock, re
     displayRecords(records);
 }
 
-/*
-function saveRecordToStorage(demand, orderMethod, orderQuantity, safetyStock, resultadoHTML) {
-    var record = {
-        demand: demand,
-        orderMethod: orderMethod,
-        orderQuantity: orderQuantity,
-        safetyStock: safetyStock,
-        resultado: resultadoHTML
-    };
-
-    var records = JSON.parse(localStorage.getItem('records')) || [];
-    records.push(record);
-    localStorage.setItem('records', JSON.stringify(records));
-
-    displayRecords(records);
-}
-*/
 function loadRecordsFromStorage() {
     var records = JSON.parse(localStorage.getItem('records')) || [];
     console.log("Cargados de localStorage:", records);

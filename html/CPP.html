@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,182 +10,197 @@
    <link rel="stylesheet" href="../css/index.css">
    <link rel="stylesheet" href="..//css/costopromedio_Pieza.css">
 </head>
+
 <body>
    <!--=============== HEADER ===============-->
    <header class="header">
-        <nav class="nav container">
-            <div class="nav__data">
-               <a href="../index.html" class="nav__logo">
-                  <i class="ri-planet-line"></i> Company
-               </a>
-               
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-line nav__burger"></i>
-                  <i class="ri-close-line nav__close"></i>
-               </div>
+      <nav class="nav container">
+         <div class="nav__data">
+            <a href="../index.html" class="nav__logo">
+               <i class="ri-planet-line"></i> Company
+            </a>
+
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line nav__burger"></i>
+               <i class="ri-close-line nav__close"></i>
             </div>
-               
-            <!--=============== NAV MENU ===============-->
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li><a href="../index.html" class="nav__link">Home</a></li>
+         </div>
 
-                  <!--=============== DROPDOWN 1 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+         <!--=============== NAV MENU ===============-->
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="../index.html" class="nav__link">Home</a></li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="../html/CMC.html" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
-                           </a>                          
-                        </li>
+               <!--=============== DROPDOWN 1 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Inventario <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                        <li>
-                           <a href="../html/EOQ.html" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> EOQ
-                           </a>
-                        </li>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="../html/CMC.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Mantenimiento Correctivo
+                        </a>
+                     </li>
 
-                        <!--=============== DROPDOWN SUBMENU ===============-->
-                        <li class="dropdown__subitem">
-                           <div class="dropdown__link">
-                              <i class="ri-bar-chart-line"></i> Control de Inventario <i class="ri-add-line dropdown__add"></i>
-                           </div>
+                     <li>
+                        <a href="../html/EOQ.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> EOQ
+                        </a>
+                     </li>
 
-                           <ul class="dropdown__submenu">
-                              <li>
-                                 <a href="../html/CFP.html" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="../html/CPP.html" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Refunds
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </li>
+                     <!--=============== DROPDOWN SUBMENU ===============-->
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Control de Inventario <i
+                              class="ri-add-line dropdown__add"></i>
+                        </div>
 
-                  <!--=============== DROPDOWN 2 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        MRP <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="../html/CFP.html" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
+                              </a>
+                           </li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i>  Diagrama 1
-                           </a>                          
-                        </li>
+                           <li>
+                              <a href="../html/CPP.html" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
+                              </a>
+                           </li>
 
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i>  Diagrama 2
-                           </a>
-                        </li>
+                           <li>
+                              <a href="#" class="dropdown__sublink">
+                                 <i class="ri-refund-2-line"></i> Refunds
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
 
-                     </ul>
+               <!--=============== DROPDOWN 2 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     MRP <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                  </li>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Diagrama 1
+                        </a>
+                     </li>
 
-                  <!--=============== DROPDOWN 3 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        LTC - LUC <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> Diagrama 2
+                        </a>
+                     </li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="../html/LTC.html" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> LTC
-                           </a>                          
-                        </li>
+                  </ul>
 
-                        <li>
-                           <a href="../html/LUC.html" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> LUC
-                           </a>
-                        </li>
-                     </ul>
+               </li>
 
-                  </li>
+               <!--=============== DROPDOWN 3 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     LTC - LUC <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                  <!--=============== DROPDOWN 4 ===============-->
-                  <li class="dropdown__item">
-                     <div class="nav__link">
-                        Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="../html/LTC.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> LTC
+                        </a>
+                     </li>
 
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-user-line"></i> Profiles
-                           </a>                          
-                        </li>
+                     <li>
+                        <a href="../html/LUC.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> LUC
+                        </a>
+                     </li>
+                  </ul>
 
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-lock-line"></i> Accounts
-                           </a>
-                        </li>
+               </li>
 
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-message-3-line"></i> Messages
-                           </a>
-                        </li>
-                     </ul>
-                  </li>
+               <!--=============== DROPDOWN 4 ===============-->
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                  </div>
 
-                  <li><a href="#" class="nav__link">Contact</a></li>
-               </ul>
-            </div>
-        </nav>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-user-line"></i> Profiles
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-lock-line"></i> Accounts
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="dropdown__link">
+                           <i class="ri-message-3-line"></i> Messages
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+
+               <li><a href="#" class="nav__link">Contact</a></li>
+            </ul>
+         </div>
+      </nav>
 
    </header>
-
    <main>
-      <div class="contenedor__todo">
-          <div class="contenedor__login-register">
-              <form action="" class="formulario__register">
-                  <h1 id="eq">Costo Promedio Por Pieza</h1>
+      <div class="contenedor__p">
+         <h1 id="eqes">Costo Promedio Por Pieza</h1>
+         <form id="formularioCPP" method="post">
+            <section>
+               <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" required>
+            </section>
 
-                  <section>
-                      <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" required>
-                  </section>
+            <section>
+               <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" required>
+            </section>
 
-                  <section>
-                      <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" required>
-                  </section>
+            <section>
+               <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" required>
+            </section>
 
-                  <section>
-                      <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" required>
-                  </section>
-
-                  <button onclick="calcularCPP(event)">Calcular</button>
-                  <div id="resultado"></div>
-              </form>
-          </div>
+            <button type="submit" id="calculoCPP">Calcular</button>
+            <div id="resultado"></div>
+         </form>
+         <table>
+            <thead>
+               <tr>
+                  <th class="col-demanda">Demanda</th>
+                  <th class="col-ciclo">Ciclo</th>
+                  <th class="col-seguridad">Seguridad</th>
+                  <th class="col-inventario">Inventario Promedio</th>
+                  <th class="col-rotacion">Rotación Inventario</th>
+                  <th class="col-analisis">Análisis</th>
+                  <th class="col-acciones">Acciones</th>
+               </tr>
+            </thead>
+            <tbody id="registros">
+                <!-- Registros serán añadidos aquí -->
+            </tbody>
+        </table>
       </div>
    </main>
 
    <!--=============== MAIN JS ===============-->
    <script src="../js/main.js"></script>
-   <script src="../js/calculos_Formulas.js"></script>
+   <script src="../js/calculos_CPP.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

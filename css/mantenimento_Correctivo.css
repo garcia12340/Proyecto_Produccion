@@ -1,112 +1,29 @@
-/*Costo De Mantenimiento Correctivo*/
 
-/*
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-}
-
-
-body{
-    background-image: url(..//img/bg4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-
-    display: flex;
-    justify-content: space-between;
-  
-}
-*/
-
-main{
-    width: 100%;
+.contenedor__todo {
+    max-width: 1300px;
+    margin: 30px auto;
     padding: 20px;
-    margin: auto;
-    margin-top: 100px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.contenedor__todo{
-    width: 100%;
-    max-width: 800px;
-    margin: 450px auto;
-    position: relative;
-}
-
-/*Formularios*/
-.contenedor__login-register{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 650px;
-    position: relative;
-    top: -185px;
-    left: 10px;
-}
-
-
-.contenedor__login-register form{
-    width: 100%;
-    padding: 80px 20px;
-    background: white;
-    position: absolute;
-    border-radius: 20px;
-}
-
-.contenedor__login-register #mc {
-    font-size: 30px;
+h1 {
     text-align: center;
-    margin-top: -60px;
-    color: #46A2FD;
-}
-/*
-.contenedor__login-register form .{
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 20px;
-    
-}
-*/
-
-.formulario__register section {
-    position: relative;
-    display: inline-block;
-    margin: 0 40px;
-    width: 220px;
-    left: -40px;
-}
-/*   margin-right: 45px;*/
-
-.formulario__register button {
-    display: block; /* Hace que el botón ocupe todo el ancho disponible */
-    margin-top: 10px; /* Ajusta el margen superior del botón */
 }
 
-.formulario__register label,select{
-    background: #F2F2F2;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    color: #09233d;
+form input {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.contenedor__login-register form input{
-    width: 120%;
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    background: #F2F2F2;
-    font-size: 16px;
-    outline: none;
-}
-
-.contenedor__login-register form button{
-    padding: 10px 40px;
-    margin-top: 40px;
+form button {
+    padding: 5px 10px;
+    margin-top: 10px;
     border: none;
     font-size: 14px;
     background: #46A2FD;
@@ -116,50 +33,81 @@ main{
     outline: none;
 }
 
-.formulario__register{
-    opacity: 1;
-    display: block;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-#resultado {
-    margin-top: 10px;
-    font-weight: bold;
-    text-align: justify;
+table,
+th,
+td {
+    border: 1px solid rgb(216, 209, 209);
+    text-align: center;
+    /* Alineación por defecto */
 }
 
-
-/*=======RESPONSIVE=======*/
-/* Media queries para dispositivos móviles */
-@media only screen and (max-width: 600px) {
-    .contenedor__todo {
-        max-width: 100%;
-        margin: 550px auto; /* Ajuste de margen para dispositivos móviles */
-    }
-
-    .contenedor__login-register {
-        max-width: 100%;
-        top: -150px;
-        left: 0;
-        text-align: center;
-    }
-
+th {
+    /*background-color: rgb(187, 173, 173);¨*/
+    background-color: #007bff;
+    color: white;
 }
 
-/* Media queries para tablets */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    .contenedor__todo {
-        max-width: 100%;
-        margin: 550px auto; /* Ajuste de margen para tablets */
-    }
-
-    .contenedor__login-register {
-        max-width: 100%;
-        top: -150px;
-        left: 0;
-        align-items: center;
-    }
-
+#data-cmc {
+    background-color: #b1b0b0;
 }
 
+button.delete {
+    background-color: #b10b0b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    background-color: #d63031;
+}
+
+button.edit {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.edit:hover {
+    background-color: #0056b3;
+}
+
+.col-horas { width: 80px; }
+.col-mtbf { width: 100px; }
+.col-valorMtbf { width: 120px; }
+.col-duracion { width: 100px; }
+.col-costoHora { width: 120px; }
+.col-repuestos { width: 120px; }
+.col-costosOperacionales { width: 150px; }
+.col-retrasoLogistico { width: 150px; }
+.col-costoUnitario { width: 150px; }
+.col-costosFallas { width: 150px; }
+.col-acciones { width: 100px; }
 
 
+/* Alineación específica para cada columna 
+th.demand,
+td.demand {
+    text-align: left;
+}
+*/
+th.cmc1,
+td.cmc1 {
+    text-align: center;
+}
+
+#mc {
+    font-size: 30px;
+    text-align: center;
+    margin-top: -5px;
+    color: #46A2FD;
+}

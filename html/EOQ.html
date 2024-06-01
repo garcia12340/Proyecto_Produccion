@@ -168,7 +168,7 @@
             <input type="text" id="order-cost" placeholder="Costo de Orden">
             <input type="text" id="holding-cost" placeholder="Costo de Mantenimiento">
             <button type="submit">Agregar</button>
-            <button type="button" id="download-json">Descargar JSON</button>
+            <button id="download-pdf">Descargar PDF</button>
          </form>
          <table id="data-table">
              <thead>
@@ -191,10 +191,12 @@
    <!--=============== MAIN JS ===============
    <script src="../js/calculos_Formulas.js"></script>
    <script src="../js/EOQ2.js"></script>-->
-   <script src="../js/eoq_bd.js"></script>
+   <script src="../js/calculos_EOQ.js"></script>
    <script src="../js/main.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
 </body>
 
 </html>

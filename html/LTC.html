@@ -161,90 +161,43 @@
     </header>
 
     <main>
-        <h1>Método Del Menor Costo Total LTC</h1>
-        <form id="ltcForm">
-            <label for="numSemanas">Número de Semanas:</label>
-            <input type="number" id="numSemanas" required><br>
-            <label for="costoMantenimiento">Costo de Mantenimiento (K):</label>
-            <input type="number" id="costoMantenimiento" required><br>
-            <label for="recepcionPlaneada">Recepción Planeada:</label>
-            <input type="number" id="recepcionPlaneada" required><br>
-            <button type="button" onclick="agregarCampos()">Agregar Semanas</button>
-        </form>
-        <div id="semanasInputs"></div>
-        <button type="button" onclick="calcularLTC()">Calcular LTC</button>
-        <table id="resultadoLTC">
-            <thead>
-                <tr>
-                    <th>Periodo</th>
-                    <th>Unidades</th>
-                    <th>Periodos mantenidos</th>
-                    <th>Costo de Mantenimiento</th>
-                    <th>Costo de mantenimiento acumulado</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="containerLTC">
+            <h1 id="eq">Método Del Menor Costo Total LTC</h1>
+
+            <form id="ltcForm" method="post">
+                <label for="numSemanas">Número de Semanas:</label>
+                <input type="number" id="numSemanas" onkeydown="return soloNumeros(event);" required><br>
+                <label for="costoMantenimiento">Costo de Mantenimiento (K):</label>
+                <input type="number" id="costoMantenimiento" onkeydown="return soloNumeros(event);" required><br>
+                <label for="recepcionPlaneada">Recepción Planeada:</label>
+                <input type="number" id="recepcionPlaneada" onkeydown="return soloNumeros(event);" required><br>
+                <button type="button" onclick="agregarCampos()">Agregar Semanas</button>
+            </form>
+
+            <div id="semanasInputs"></div>
+            <button type="button" onclick="calcularLTC()">Calcular LTC</button>
+
+            <table id="resultadoLTC">
+                <thead>
+                    <tr>
+                        <th>Periodo</th>
+                        <th>Unidades</th>
+                        <th>Periodos mantenidos</th>
+                        <th>Costo de Mantenimiento</th>
+                        <th>Costo de mantenimiento acumulado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+        
     </main>
 
     <!--=============== MAIN JS ===============-->
-    <script>
-        function agregarCampos() {
-            const numSemanas = document.getElementById('numSemanas').value;
-            const semanasInputs = document.getElementById('semanasInputs');
-            semanasInputs.innerHTML = ''; // Limpiar campos previos
-
-            for (let i = 1; i <= numSemanas; i++) {
-                const input = document.createElement('input');
-                input.type = 'number';
-                input.id = 'semana' + i;
-                input.placeholder = 'Requerimiento Semana ' + i;
-                semanasInputs.appendChild(input);
-            }
-        }
-
-        function calcularLTC() {
-            const numSemanas = parseInt(document.getElementById('numSemanas').value);
-            const K = parseFloat(document.getElementById('costoMantenimiento').value);
-            const recepcionPlaneada = parseFloat(document.getElementById('recepcionPlaneada').value);
-            const tbody = document.getElementById('resultadoLTC').getElementsByTagName('tbody')[0];
-            tbody.innerHTML = ''; // Limpiar tabla anterior
-
-            let costoAcumulado = 0;
-            let periodosMantenidos = 0;
-            let periodoActual = 1; // Iniciar contador de períodos en 1
-
-            for (let i = 1; i <= numSemanas; i++) {
-                const requerimiento = parseFloat(document.getElementById('semana' + i).value);
-                const costoMantenimiento = requerimiento * periodosMantenidos * K;
-                costoAcumulado += costoMantenimiento;
-
-                const row = tbody.insertRow();
-                const cellPeriodo = row.insertCell(0);
-                const cellUnidades = row.insertCell(1);
-                const cellMantenidos = row.insertCell(2);
-                const cellCosto = row.insertCell(3);
-                const cellCostoAcumulado = row.insertCell(4);
-
-                cellPeriodo.textContent = periodoActual;
-                cellUnidades.textContent = requerimiento;
-                cellMantenidos.textContent = periodosMantenidos;
-                cellCosto.textContent = costoMantenimiento.toFixed(2);
-                cellCostoAcumulado.textContent = costoAcumulado.toFixed(2);
-
-                if (costoAcumulado >= recepcionPlaneada) {
-                    row.className = "highlight"; // Aplicar la clase highlight a la fila que sobrepasa la recepción planeada
-                    periodosMantenidos = 0; // Restablecer los periodos mantenidos
-                    costoAcumulado = 0; // Opcionalmente, restablecer costo acumulado
-                    periodoActual = 1; // Restablecer el contador de período
-                } else {
-                    periodosMantenidos++; // Incrementar después de calcular el costo
-                    periodoActual++; // Incrementar periodo para la siguiente iteración
-                }
-            }
-        }
-    </script>
-
+    <script src="../js/calculos_LTC.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
