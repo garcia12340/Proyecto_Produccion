@@ -9,7 +9,7 @@
    <!--=============== REMIXICONS ===============-->
    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
    <link rel="stylesheet" href="../css/index.css">
-   <link rel="stylesheet" href="../css/eoq.css">
+   <link rel="stylesheet" href="../css/luc.css">
 </head>
 
 <body>
@@ -84,48 +84,22 @@
                <!--=============== DROPDOWN 2 ===============-->
                <li class="dropdown__item">
                   <div class="nav__link">
-                     Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     MRP <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                   </div>
 
                   <ul class="dropdown__menu">
                      <li>
                         <a href="#" class="dropdown__link">
-                           <i class="ri-pie-chart-line"></i> Overview
+                           <i class="ri-pie-chart-line"></i>  Diagrama 1
                         </a>
                      </li>
 
                      <li>
                         <a href="#" class="dropdown__link">
-                           <i class="ri-arrow-up-down-line"></i> Transactions
+                           <i class="ri-arrow-up-down-line"></i>  Diagrama 2
                         </a>
                      </li>
 
-                     <!--=============== DROPDOWN SUBMENU ===============-->
-                     <li class="dropdown__subitem">
-                        <div class="dropdown__link">
-                           <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
-                        </div>
-
-                        <ul class="dropdown__submenu">
-                           <li>
-                              <a href="#" class="dropdown__sublink">
-                                 <i class="ri-file-list-line"></i> Documents
-                              </a>
-                           </li>
-
-                           <li>
-                              <a href="#" class="dropdown__sublink">
-                                 <i class="ri-cash-line"></i> Payments
-                              </a>
-                           </li>
-
-                           <li>
-                              <a href="#" class="dropdown__sublink">
-                                 <i class="ri-refund-2-line"></i> Refunds
-                              </a>
-                           </li>
-                        </ul>
-                     </li>
                   </ul>
 
                </li>
@@ -138,43 +112,15 @@
 
                   <ul class="dropdown__menu">
                      <li>
-                        <a href="../html/LTC.html"  class="dropdown__link">
+                        <a href="../html/LTC.html"  target="_blank" class="dropdown__link">
                            <i class="ri-pie-chart-line"></i> LTC
                         </a>
                      </li>
 
                      <li>
-                        <a href="../html/LUC.html"  class="dropdown__link">
+                        <a href="../html/LUC.html" target="_blank" class="dropdown__link">
                            <i class="ri-arrow-up-down-line"></i> LUC
                         </a>
-                     </li>
-
-                     <!--=============== DROPDOWN SUBMENU ===============-->
-                     <li class="dropdown__subitem">
-                        <div class="dropdown__link">
-                           <i class="ri-bar-chart-line"></i> Control de Inventario <i
-                              class="ri-add-line dropdown__add"></i>
-                        </div>
-
-                        <ul class="dropdown__submenu">
-                           <li>
-                              <a href="#" class="dropdown__sublink">
-                                 <i class="ri-refund-2-line"></i> Costo Fijo Por Pieza
-                              </a>
-                           </li>
-
-                           <li>
-                              <a href="#" class="dropdown__sublink">
-                                 <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
-                              </a>
-                           </li>
-
-                           <li>
-                              <a href="#" class="dropdown__sublink">
-                                 <i class="ri-refund-2-line"></i> Refunds
-                              </a>
-                           </li>
-                        </ul>
                      </li>
                   </ul>
 
@@ -215,7 +161,7 @@
 </header>
 
 <main>
-    <h1>Método LUC</h1>
+   <h1>Método Del Menor Costo Unitario LUC</h1>
     <form id="lucForm">
         <label for="costHold">Costo de Ordenar:</label>
         <input type="number" id="costHold" step="0.01" required><br>
