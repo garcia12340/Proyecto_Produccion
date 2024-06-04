@@ -22,6 +22,7 @@ request.onupgradeneeded = function(event) {
     objectStore.createIndex("seguridad", "seguridad", { unique: false });
     objectStore.createIndex("nivelInventarioPromedio", "nivelInventarioPromedio", { unique: false });
     objectStore.createIndex("rotacionInventario", "rotacionInventario", { unique: false });
+    objectStore.createIndex("numeros_Semanas", "numeros_Semanas", { unique: false });
     objectStore.createIndex("analisis", "analisis", { unique: false });
 };
 
@@ -30,9 +31,10 @@ function calcularCPP(event) {
     let demanda = parseInt(document.getElementById('demanda').value);
     let ciclo = parseInt(document.getElementById('ciclo').value);
     let seguridad = parseInt(document.getElementById('seguridad').value);
+    let semanas_Trabajar = parseInt(document.getElementById('n_semanas').value);
 
     let nivelInventarioPromedio = (demanda * ciclo / 2) + seguridad;
-    let rotacionInventario = (demanda * 52) / nivelInventarioPromedio;
+    let rotacionInventario = (demanda * semanas_Trabajar) / nivelInventarioPromedio;
     rotacionInventario = rotacionInventario < 1 ? 1 : rotacionInventario;
 
     let analisis = `
@@ -46,6 +48,7 @@ function calcularCPP(event) {
         seguridad,
         nivelInventarioPromedio,
         rotacionInventario,
+        semanas_Trabajar,
         analisis
     };
 
@@ -108,6 +111,7 @@ function mostrarRegistros() {
                 <td>${registro.seguridad}</td>
                 <td>${registro.nivelInventarioPromedio.toFixed(0)}</td>
                 <td>${registro.rotacionInventario.toFixed(0)}</td>
+                <td>${registro.semanas_Trabajar.toFixed(0)}</td>
                 <td>${registro.analisis}</td>
                 <td>
                     <button class="edit" onclick="editarRegistro(${cursor.primaryKey})">Editar</button>
@@ -131,6 +135,7 @@ function editarRegistro(index) {
         document.getElementById('demanda').value = registro.demanda;
         document.getElementById('ciclo').value = registro.ciclo;
         document.getElementById('seguridad').value = registro.seguridad;
+        document.getElementById('n_semanas').value = registro.semanas_Trabajar;
 
         editingIndex = index;
     };
