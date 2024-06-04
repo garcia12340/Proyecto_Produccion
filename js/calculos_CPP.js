@@ -32,7 +32,7 @@ function calcularCPP(event) {
     let seguridad = parseInt(document.getElementById('seguridad').value);
 
     let nivelInventarioPromedio = (demanda * ciclo / 2) + seguridad;
-    let rotacionInventario = demanda / nivelInventarioPromedio;
+    let rotacionInventario = (demanda * 52) / nivelInventarioPromedio;
     rotacionInventario = rotacionInventario < 1 ? 1 : rotacionInventario;
 
     let analisis = `
