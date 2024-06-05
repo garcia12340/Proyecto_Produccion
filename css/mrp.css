@@ -1,0 +1,107 @@
+
+.contenedorMrp{
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form input {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.boton1,
+.boton2,
+.boton3,
+form button{
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+#eq {
+    font-size: 30px;
+    text-align: center;
+    margin-top: -5px;
+    color: #46A2FD;
+}
+
+
+/**********************************************/
+.link path {
+    fill: none;
+    stroke: #555;
+    stroke-width: 2px;
+}
+.link text {
+    font: 12px sans-serif;
+    fill: #555;
+    text-anchor: middle;
+}
+.node rect {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+.node text {
+    font: 12px sans-serif;
+}
+.node {
+    cursor: pointer;
+}
+text {
+    user-select: none;
+}
+
+.link path {
+fill: none;
+stroke: #555;
+stroke-width: 2px;
+}
+
+.link text {
+    font: 12px sans-serif;
+    fill: #555;
+    text-anchor: middle;
+}
+
+.node rect {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+.node text {
+    font: 12px sans-serif;
+}
+
+.node {
+    cursor: pointer;
+}
+
+text {
+    user-select: none;
+}
+
+.diagrama{
+    background-color: #fff;
+}
+
+
