@@ -1,17 +1,19 @@
 let treeData = [];
 let relationships = [];
+let quantities = {};
 
 function addNode() {
     const nodeName = document.getElementById("nodeName").value.trim();
     const parentNode = document.getElementById("parentNode").value.trim();
-    const relation = document.getElementById("relation").value.trim();
+    const quantity = parseInt(document.getElementById("quantity").value);
 
-    if (!nodeName) {
-        alert("Por favor, ingrese un nombre para el nodo.");
+    if (!nodeName || isNaN(quantity) || quantity < 1) {
+        alert("Por favor, ingrese un nombre para el nodo y una cantidad válida.");
         return;
     }
 
     const newNode = { name: nodeName, children: [] };
+    quantities[nodeName] = quantity;
 
     if (parentNode) {
         let found = false;
@@ -19,7 +21,7 @@ function addNode() {
             data.forEach(node => {
                 if (node.name === parentNode) {
                     node.children.push(newNode);
-                    relationships.push({ source: parentNode, target: nodeName, relation: relation });
+                    relationships.push({ source: parentNode, target: nodeName, quantity: quantity });
                     found = true;
                     return;
                 }
@@ -37,7 +39,7 @@ function addNode() {
 
     document.getElementById("nodeName").value = "";
     document.getElementById("parentNode").value = "";
-    document.getElementById("relation").value = "";
+    document.getElementById("quantity").value = 1;
     alert("Nodo añadido correctamente.");
 }
 
@@ -79,7 +81,7 @@ function generateTreeDiagram() {
         .attr("dy", "0.35em")
         .text(d => {
             const rel = relationships.find(r => r.source === d.source.data.name && r.target === d.target.data.name);
-            return rel ? rel.relation : '';
+            return rel ? `${rel.quantity}` : '';
         });
 
     var node = svg.selectAll(".node")
@@ -102,15 +104,15 @@ function generateTreeDiagram() {
         .attr("x", 0) // Centra el texto horizontalmente
         .attr("y", 0) // Coloca el texto en el centro vertical del rectángulo
         .style("text-anchor", "middle") // Asegura que el texto esté centrado horizontalmente
-        .text(d => d.data.name);
+        .text(d => `${d.data.name} (${quantities[d.data.name]})`);
 }
 
-
 function downloadPDF() {
+    const { jsPDF } = window.jspdf;
     const diagram = document.getElementById('treeDiagram');
 
-    html2canvas(diagram, { scale: 2 }).then(canvas => {
-        const pdf = new jspdf.jsPDF({
+    html2canvas(diagram).then(canvas => {
+        const pdf = new jsPDF({
             orientation: 'landscape',
             unit: 'px',
             format: [canvas.width, canvas.height]
@@ -121,4 +123,69 @@ function downloadPDF() {
     }).catch(err => {
         console.error('Error al capturar el diagrama:', err);
     });
+}
+
+function calculateMRP() {
+    if (treeData.length === 0) {
+        alert("No hay nodos para calcular MRP.");
+        return;
+    }
+
+    let mrpResults = {};
+
+    function calculateNodeMRP(node, multiplier) {
+        const nodeName = node.name;
+        const nodeQuantity = quantities[nodeName] * multiplier;
+
+        if (!mrpResults[nodeName]) {
+            mrpResults[nodeName] = 0;
+        }
+        mrpResults[nodeName] += nodeQuantity;
+
+        if (node.children && node.children.length > 0) {
+            node.children.forEach(childNode => {
+                const childRel = relationships.find(r => r.source === nodeName && r.target === childNode.name);
+                if (childRel) {
+                    calculateNodeMRP(childNode, nodeQuantity);
+                }
+            });
+        }
+    }
+
+    treeData.forEach(rootNode => {
+        calculateNodeMRP(rootNode, 1);
+    });
+
+    displayMRPResults(mrpResults);
+}
+
+function displayMRPResults(mrpResults) {
+    const resultsDiv = document.getElementById('mrpResults');
+    resultsDiv.innerHTML = "";
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    thead.innerHTML = `
+        <tr>
+            <th colspan="2">Resultados del MRP</th>
+        </tr>
+        <tr>
+            <th>Material</th>
+            <th>Cantidad Total</th>
+        </tr>
+    `;
+
+    for (const [material, quantity] of Object.entries(mrpResults)) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${material}</td>
+            <td>${quantity}</td>
+        `;
+        tbody.appendChild(row);
+    }
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    resultsDiv.appendChild(table);
 }

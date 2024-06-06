@@ -153,21 +153,21 @@
                 <input type="text" id="nodeName" name="nodeName" required><br><br>
                 <label for="parentNode">Nodo padre (deje en blanco para nodo raíz):</label>
                 <input type="text" id="parentNode" name="parentNode"><br><br>
-                <label for="relation">Relación (describe la conexión):</label>
-                <input type="text" id="relation" name="relation"><br><br>
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" name="quantity" required min="1" value="1"><br><br>
                 <button type="button" onclick="addNode()">Añadir Nodo</button>
             </form>
 
-            <button class="boton1" onclick="generateTreeDiagram()">Generar Mapa Conceptual</button>
+            <button class="boton1" onclick="generateTreeDiagram()">Generar Mapa</button>
             <button class="boton2" onclick="downloadPDF()">Descargar PDF</button>
             <button class="boton3" onclick="calculateMRP()">Calcular MRP</button>
         </div>
 
         <div class="diagrama">
             <div id="treeDiagram"></div>
+            <div id="mrpResults"></div>
         </div>
 
-        <div id="mrpResults"></div>
     </main>
 
 
@@ -180,5 +180,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>
+
+
