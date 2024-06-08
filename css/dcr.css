@@ -1,0 +1,121 @@
+
+.contendorDCR{
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form input {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form select{
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 115px;
+}
+
+form button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid rgb(216, 209, 209);
+    text-align: center; /* Alineación por defecto */
+}
+
+th {
+    /*background-color: rgb(187, 173, 173);¨*/
+    background-color: #007bff;
+    color: white;
+}
+
+#data-body{
+    background-color: #b1b0b0;
+}
+button.delete {
+    background-color: #b10b0b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    background-color: #d63031;
+}
+
+button.edit {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.edit:hover {
+    background-color: #0056b3;
+}
+
+/* Alineación específica para cada columna */
+th.demand, td.demand {
+    text-align: left;
+}
+
+th.eoq, td.eoq {
+    text-align: right;
+}
+
+#eq {
+    font-size: 30px;
+    text-align: center;
+    margin-top: -5px;
+    color: #46A2FD;
+}
+
+/*NOTIFICACION*/
+#notification {
+    margin-top: 20px;
+    padding: 10px;
+    display: none;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.success {
+    color: green;
+    border-color: green;
+}
+.error {
+    color: red;
+    border-color: red;
+}

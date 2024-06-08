@@ -105,6 +105,16 @@ td.cmc1 {
     color: #46A2FD;
 }
 
+form select{
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 115px;
+}
+
 /*===================================================================*/
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
