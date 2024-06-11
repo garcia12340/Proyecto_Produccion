@@ -1,10 +1,4 @@
-/*
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-*/
+
 .contenedor__p{
     max-width: 800px;
     margin: 30px auto;
@@ -96,19 +90,129 @@ button.edit:hover {
 .th{
     text-align: center;
 }
-/* Alineación específica para cada columna 
-th.demandas, td.demandas {
-    text-align: left;
-}
-*/
-/*
-th.eoq, td.eoq {
-    text-align: right;
-}
-*/
+
 #eqes {
     font-size: 30px;
     text-align: center;
     margin-top: -5px;
     color: #46A2FD;
+}
+
+
+/* CSS existente aquí */
+
+/* Media queries para responsividad */
+
+/* Para dispositivos con un ancho máximo de 1200px */
+@media (max-width: 1200px) {
+    .contenedor__p {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .col-analisis {
+        width: 140px;
+    }
+}
+
+/* Para dispositivos con un ancho máximo de 992px */
+@media (max-width: 992px) {
+    .contenedor__p {
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+    }
+
+    .col-analisis {
+        width: 120px;
+    }
+}
+
+/* Para dispositivos con un ancho máximo de 768px */
+@media (max-width: 768px) {
+    .contenedor__p {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    form input {
+        width: calc(100% - 10px);
+    }
+
+    form button {
+        font-size: 12px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+    }
+
+    .col-demanda, .col-ciclo, .col-seguridad, .col-inventario, .col-rotacion, .col-semanas, .col-analisis, .col-acciones {
+        width: auto;
+    }
+}
+
+/* Para dispositivos con un ancho máximo de 576px */
+@media (max-width: 576px) {
+    .contenedor__p {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    form input {
+        width: calc(100% - 8px);
+    }
+
+    form button {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    table, th, td {
+        font-size: 10px;
+    }
+
+    .col-demanda, .col-ciclo, .col-seguridad, .col-inventario, .col-rotacion, .col-semanas, .col-analisis, .col-acciones {
+        width: 100%;
+    }
+}
+
+/* Para dispositivos con un ancho máximo de 480px */
+@media (max-width: 480px) {
+    .contenedor__p {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    form input {
+        width: calc(100% - 6px);
+    }
+
+    form button {
+        font-size: 8px;
+        padding: 4px 6px;
+    }
+
+    table, th, td {
+        font-size: 8px;
+    }
+
+    .col-demanda, .col-ciclo, .col-seguridad, .col-inventario, .col-rotacion, .col-semanas, .col-analisis, .col-acciones {
+        width: 100%;
+    }
 }

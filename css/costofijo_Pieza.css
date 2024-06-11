@@ -108,3 +108,102 @@ form select{
     box-sizing: border-box;
     width: 190px;
 }
+
+
+/*==========================================================*/
+@media only screen and (max-width: 1200px) {
+    .containeres {
+        max-width: 95%;
+    }
+
+    table, th, td {
+        font-size: 16px;
+    }
+
+    button[type="submit"],
+    .actions button {
+        padding: 8px 16px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .containeres {
+        max-width: 95%;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    button[type="submit"],
+    .actions button {
+        padding: 8px 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .containeres {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="number"],
+    select,
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    table, th, td {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .actions button {
+        padding: 6px 10px;
+        margin: 4px 2px;
+    }
+
+    #cpf {
+        font-size: 24px;
+    }
+
+    form select {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .containeres {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    table, th, td {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    button[type="submit"],
+    .actions button {
+        padding: 5px 8px;
+    }
+
+    #cpf {
+        font-size: 20px;
+    }
+
+    form select {
+        width: 100%;
+    }
+}
+

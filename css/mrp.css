@@ -1,140 +1,4 @@
-/*
-.contenedorMrp{
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
 
-h1 {
-    text-align: center;
-}
-
-form input {
-    width: calc(100% - 12px);
-    padding: 8px;
-    margin: 8px 0;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.boton1,
-.boton2,
-.boton3,
-form button{
-    padding: 5px 10px;
-    margin-top: 10px;
-    border: none;
-    font-size: 14px;
-    background: #46A2FD;
-    font-weight: 600;
-    cursor: pointer;
-    color: white;
-    outline: none;
-}
-
-#eq {
-    font-size: 30px;
-    text-align: center;
-    margin-top: -5px;
-    color: #46A2FD;
-}
-
-
-/********************************************
-.link path {
-    fill: none;
-    stroke: #555;
-    stroke-width: 2px;
-}
-
-.link text {
-    font: 12px sans-serif;
-    fill: #555;
-    text-anchor: middle;
-}
-
-.node rect {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 3px;
-}
-
-.node text {
-    font: 12px sans-serif;
-}
-
-.node {
-    cursor: pointer;
-}
-
-text {
-    user-select: none;
-}
-
-/**********************************************
-.link path {
-fill: none;
-stroke: #555;
-stroke-width: 2px;
-}
-
-.link text {
-    font: 12px sans-serif;
-    fill: #555;
-    text-anchor: middle;
-}
-
-.node rect {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 3px;
-}
-
-.node text {
-    font: 12px sans-serif;
-}
-
-.node {
-    cursor: pointer;
-}
-
-text {
-    user-select: none;
-}
-
-.diagrama{
-    background-color: #fff;
-}
-
-/*********************************************
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border: 1px solid black;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid black;
-}
-
-th {
-    background-color: #46A2FD;
-    color: white;
-}
-
-#mrpResults h2 {
-    text-align: center;
-    background-color: #fff;
-}
-
-*/
 .contenedorMrp {
     max-width: 800px;
     margin: 30px auto;
@@ -237,3 +101,79 @@ th {
 }
 
 
+/* Estilos para dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 600px) {
+    .contenedorMrp {
+        padding: 15px;
+        margin: 20px 10px;
+        max-width: 100%;
+    }
+
+    form input {
+        width: calc(100% - 16px);
+        padding: 6px;
+    }
+
+    .boton1,
+    .boton2,
+    .boton3,
+    form button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    #eq {
+        font-size: 24px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    th {
+        font-size: 14px;
+    }
+
+    #mrpResults h2 {
+        font-size: 18px;
+    }
+}
+
+/* Estilos para tablets (pantallas medianas) 
+@media (min-width: 601px) and (max-width: 900px) {
+    .contenedorMrp {
+        padding: 18px;
+        margin: 25px auto;
+        max-width: 90%;
+    }
+
+    form input {
+        width: calc(100% - 14px);
+        padding: 7px;
+    }
+
+    .boton1,
+    .boton2,
+    .boton3,
+    form button {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    #eq {
+        font-size: 26px;
+    }
+
+    table th, table td {
+        padding: 9px;
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    #mrpResults h2 {
+        font-size: 20px;
+    }
+}
+*/
