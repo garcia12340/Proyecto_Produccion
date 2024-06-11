@@ -1,7 +1,7 @@
 
 .contenedor__todo {
     max-width: 1300px;
-    margin: 30px auto;
+    margin: -20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -117,9 +117,48 @@ form select{
 
 /*===================================================================*/
 /* Media queries para pantallas pequeñas */
-@media (max-width: 768px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .contenedor__todo {
+        max-width: 100%;
+        margin: -20px auto; /* Ajuste de margen para dispositivos móviles */
+        /*padding: 5px;*/
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    form input, form select, form button {
+        font-size: 0.8em;
+        padding: 5px;
+    }
+
+    table, th, td {
+        font-size: 0.7em;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        white-space: nowrap;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .contenedor__todo {
+        max-width: 100%;
+        margin: -20px auto; /* Ajuste de margen para dispositivos móviles */
+        /*padding: 5px;*/
+    }
+
     table, thead, tbody, th, td, tr {
         display: block;
+
     }
 
     thead tr {
@@ -166,34 +205,6 @@ form select{
     td:nth-of-type(11):before { content: "MC"; }
     td:nth-of-type(12):before { content: "Análisis"; }
     td:nth-of-type(13):before { content: "Acciones"; }
-}
 
-@media (max-width: 480px) {
-    .contenedor__todo {
-        padding: 5px;
-    }
-
-    h1 {
-        font-size: 1.2em;
-    }
-
-    form input, form select, form button {
-        font-size: 0.8em;
-        padding: 5px;
-    }
-
-    table, th, td {
-        font-size: 0.7em;
-    }
-
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    th, td {
-        white-space: nowrap;
-    }
 }
 
