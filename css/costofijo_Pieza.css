@@ -1,5 +1,5 @@
 .containeres {
-    max-width: 800px;
+    max-width: 650px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -48,6 +48,7 @@ button[type="submit"]:hover {
 }
 
 table {
+    margin: 0 auto; 
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -57,12 +58,13 @@ th, td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
-    text-align: justify; /* Alineación por defecto */
+    text-align: justify; 
 }
 
 th {
     background-color: #007bff;
     color: white;
+    text-align: center;
 }
 
 tr:nth-child(even) {
@@ -109,42 +111,51 @@ form select{
     width: 190px;
 }
 
+.col-demandas { width: 80px; }
+.col-metodoPedido { width: 80px; }
+.col-cantidadPedido { width: 80px; }
+.col-stockSeguridad { width: 80px; }
+.col-resultado { width: 80px; }
+.col-acciones { width: 80px; }
+
+#recordsBody{
+    background-color: #b1b0b0;
+}
 
 /*==========================================================*/
-@media only screen and (max-width: 1200px) {
+/* Responsive CSS */
+@media (max-width: 1200px) {
     .containeres {
-        max-width: 95%;
-    }
-
-    table, th, td {
-        font-size: 16px;
-    }
-
-    button[type="submit"],
-    .actions button {
-        padding: 8px 16px;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    .containeres {
-        max-width: 95%;
-    }
-
-    table, th, td {
-        font-size: 14px;
-    }
-
-    button[type="submit"],
-    .actions button {
-        padding: 8px 12px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .containeres {
-        max-width: 95%;
+        max-width: 90%;
         padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .containeres {
+        max-width: 80%;
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .actions button {
+        padding: 6px 12px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .containeres {
+        max-width: 95%;
+        padding: 10px;
     }
 
     h1 {
@@ -153,57 +164,46 @@ form select{
 
     input[type="number"],
     select,
-    button[type="submit"] {
+    form select {
         width: 100%;
-        padding: 10px;
-        margin: 10px 0;
     }
 
-    table, th, td {
-        font-size: 12px;
-        padding: 10px;
+    th, td {
+        padding: 8px;
     }
 
     .actions button {
-        padding: 6px 10px;
-        margin: 4px 2px;
+        width: 100%;
+        margin: 5px 0;
     }
 
     #cpf {
         font-size: 24px;
     }
-
-    form select {
-        width: 100%;
-    }
 }
 
-@media only screen and (max-width: 576px) {
+@media (max-width: 576px) {
     .containeres {
         max-width: 100%;
-        padding: 10px;
+        padding: 5px;
     }
 
     h1 {
         font-size: 20px;
     }
 
-    table, th, td {
-        font-size: 10px;
-        padding: 8px;
+    th, td {
+        font-size: 14px;
+        padding: 5px;
     }
 
-    button[type="submit"],
     .actions button {
-        padding: 5px 8px;
+        width: 100%;
+        padding: 5px;
+        margin: 2px 0;
     }
 
     #cpf {
         font-size: 20px;
     }
-
-    form select {
-        width: 100%;
-    }
 }
-

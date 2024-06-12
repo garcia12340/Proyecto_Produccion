@@ -186,24 +186,22 @@
            <input type="number" id="safetyStock" required>
            <br>
            <button type="submit">Calcular</button>
+           <div id="resultado"></div>
          </form>
-     
-         <div id="resultado"></div>
-     
          <table id="recordsTable">
-           <thead>
-             <tr>
-               <th>Demanda</th>
-               <th>Método Pedido</th>
-               <th>Cantidad Pedido</th>
-               <th>Stock Seguridad</th>
-               <th>Resultado</th>
-               <th>Acciones</th>
-             </tr>
-           </thead>
-           <tbody id="recordsBody">
-             <!-- Aquí se insertarán los registros -->
-           </tbody>
+            <thead>
+              <tr>
+                <th class="col-demandas">Demanda</th>
+                <th class="col-metodoPedido">Método Pedido</th>
+                <th class="col-cantidadPedido">Cantidad Pedido</th>
+                <th class="col-stockSeguridad">Stock Seguridad</th>
+                <th class="col-resultado">Resultado</th>
+                <th class="col-acciones">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="recordsBody">
+              <!-- Aquí se insertarán los registros -->
+            </tbody>
          </table>
        </div>
    </main>
