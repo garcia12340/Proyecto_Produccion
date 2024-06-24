@@ -54,6 +54,7 @@ function calcularLTC() {
 }
 
 //Validacion de los Input
+/*
 function soloNumeros(event) {
     const key = event.key;
     const inputValue = event.target.value;
@@ -77,6 +78,81 @@ function mostrarAdvertencia() {
         warningPanel.textContent = 'Por favor, ingrese solo números.';
         document.body.appendChild(warningPanel);
     }
+    warningPanel.style.display = 'block';
+    setTimeout(() => {
+        warningPanel.style.display = 'none';
+    }, 1000);
+}
+*/
+
+//Validacion de los Input
+function soloNumeros(event) {
+    const key = event.key;
+    const inputValue = event.target.value;
+    const isNumber = (key >= '0' && key <= '9');
+    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
+    const isDecimal = key === '.' && !inputValue.includes('.');
+    const newValue = inputValue + key;
+
+    // Check if the new value would be a negative number
+    if (newValue.startsWith('-')) {
+        mostrarAdvertencia('No se permiten números negativos.');
+        return false;
+    }
+
+    if (isNumber || isControlKey || isDecimal) {
+        return true;
+    } else {
+        mostrarAdvertencia('Por favor, ingrese solo números.');
+        return false;
+    }
+}
+
+function mostrarAdvertencia(message) {
+    let warningPanel = document.getElementById('warningPanel');
+    if (!warningPanel) {
+        warningPanel = document.createElement('div');
+        warningPanel.id = 'warningPanel';
+        document.body.appendChild(warningPanel);
+    }
+    warningPanel.textContent = message;
+    warningPanel.style.display = 'block';
+    setTimeout(() => {
+        warningPanel.style.display = 'none';
+    }, 1000);
+}
+
+//Validacion de los Input
+function soloNumeros(event) {
+    const key = event.key;
+    const inputValue = event.target.value;
+    const isNumber = (key >= '0' && key <= '9');
+    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
+    const isDecimal = key === '.' && !inputValue.includes('.');
+    const newValue = inputValue + key;
+
+    // Check if the new value would be a negative number
+    if (newValue.startsWith('-')) {
+        mostrarAdvertencia('No se permiten números negativos.');
+        return false;
+    }
+
+    if (isNumber || isControlKey || isDecimal) {
+        return true;
+    } else {
+        mostrarAdvertencia('Por favor, ingrese solo números.');
+        return false;
+    }
+}
+
+function mostrarAdvertencia(message) {
+    let warningPanel = document.getElementById('warningPanel');
+    if (!warningPanel) {
+        warningPanel = document.createElement('div');
+        warningPanel.id = 'warningPanel';
+        document.body.appendChild(warningPanel);
+    }
+    warningPanel.textContent = message;
     warningPanel.style.display = 'block';
     setTimeout(() => {
         warningPanel.style.display = 'none';
