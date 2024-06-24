@@ -115,6 +115,26 @@ form select{
     width: 115px;
 }
 
+/*La notificacion de Error*/
+.highlight {
+    background-color: #b40303d1; /* Light red background */
+}
+
+/*La notificacion de Error*/
+#warningPanel {
+    display: none;
+    color: red;
+    background-color: #fff;
+    border: 1px solid #e9061d;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
 /*===================================================================*/
 /* Media queries para pantallas pequeñas */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {

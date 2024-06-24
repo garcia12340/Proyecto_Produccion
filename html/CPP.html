@@ -171,19 +171,19 @@
          <h1 id="eqes">Costo Promedio Por Pieza</h1>
          <form id="formularioCPP" method="post">
             <section>
-               <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" required>
+               <input type="number" id="demanda" min="0" placeholder="Demanda semanal (d)" onkeydown="return soloNumeros(event);" required>
             </section>
 
             <section>
-               <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" required>
+               <input type="number" id="ciclo" min="1" placeholder="Ciclo de Revisión (T) en Semanas" onkeydown="return soloNumeros(event);" required>
             </section>
 
             <section>
-               <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" required>
+               <input type="number" id="seguridad" min="0" placeholder="Inventario de seguridad (SS)" onkeydown="return soloNumeros(event);" required>
             </section>
 
             <section>
-               <input type="number" id="n_semanas" min="0" placeholder="Semanas A Trabajar" required>
+               <input type="number" id="n_semanas" min="0" placeholder="Semanas A Trabajar" onkeydown="return soloNumeros(event);" required>
             </section>
             <button type="submit" id="calculoCPP">Calcular</button>
             <div id="resultado"></div>

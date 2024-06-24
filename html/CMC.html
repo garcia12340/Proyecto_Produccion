@@ -173,7 +173,7 @@
          <h1 id="mc">Mantenimiento Correctivo</h1>
          <form id="formulario" class="formulario__register">
             <section>
-               <input type="number" id="horas" placeholder="Horas Kilométradas" required>
+               <input type="number" id="horas" placeholder="Horas Kilométradas" onkeydown="return soloNumeros(event);" required>
             </section>
 
             <section>
@@ -185,35 +185,35 @@
             </section>
 
             <section>
-               <input type="number" id="valorMtbf" placeholder="Valor de MTBF" required>
+               <input type="number" id="valorMtbf" placeholder="Valor de MTBF" onkeydown="return soloNumeros(event);" required>
             </section>
 
             <section>
-               <input type="number" id="duracion" placeholder="Duracion Tarea (Horas)">
+               <input type="number" id="duracion" placeholder="Duracion Tarea (Horas)" onkeydown="return soloNumeros(event);">
             </section>
 
             <section>
-               <input type="number" id="costoHora" placeholder="Costo Por Hora de Trabajo ($)">
+               <input type="number" id="costoHora" placeholder="Costo Por Hora de Trabajo ($)" onkeydown="return soloNumeros(event);">
             </section>
 
             <section>
-               <input type="number" id="repuestos" placeholder="Respuestos ($)">
+               <input type="number" id="repuestos" placeholder="Respuestos ($)" onkeydown="return soloNumeros(event);">
             </section>
 
             <section>
-               <input type="number" id="costosOperacionales" placeholder="Costo de Tareas Operacionales ($)">
+               <input type="number" id="costosOperacionales" placeholder="Costo de Tareas Operacionales ($)" onkeydown="return soloNumeros(event);">
             </section>
 
             <section>
-               <input type="number" id="retrasoLogistico" placeholder="Retraso Logístico ($)">
+               <input type="number" id="retrasoLogistico" placeholder="Retraso Logístico ($)" onkeydown="return soloNumeros(event);">
             </section>
 
             <section>
-               <input type="number" id="costoUnitario" placeholder="Costo Unitario por Parada ($/hora)">
+               <input type="number" id="costoUnitario" placeholder="Costo Unitario por Parada ($/hora)" onkeydown="return soloNumeros(event);">
             </section>
 
             <section>
-               <input type="number" id="costosFallas" placeholder="Costos de Falla de Vez Única ($)">
+               <input type="number" id="costosFallas" placeholder="Costos de Falla de Vez Única ($)" onkeydown="return soloNumeros(event);">
             </section>
 
             <button id="calcularButton">Calcular</button>

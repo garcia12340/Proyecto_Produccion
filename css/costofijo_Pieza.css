@@ -122,6 +122,26 @@ form select{
     background-color: #b1b0b0;
 }
 
+/*La notificacion de Error*/
+.highlight {
+    background-color: #b40303d1; /* Light red background */
+}
+
+/*La notificacion de Error*/
+#warningPanel {
+    display: none;
+    color: red;
+    background-color: #fff;
+    border: 1px solid #e9061d;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
 /*==========================================================*/
 /* Responsive CSS */
 @media (max-width: 1200px) {

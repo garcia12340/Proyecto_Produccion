@@ -124,6 +124,26 @@ main{
     background-color: #ffc107; /* Cambia el color de fondo cuando está seleccionada */
 }
 
+/*La notificacion de Error*/
+.highlight {
+    background-color: #b40303d1; /* Light red background */
+}
+
+/*La notificacion de Error*/
+#warningPanel {
+    display: none;
+    color: red;
+    background-color: #fff;
+    border: 1px solid #e9061d;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
 /*=======RESPONSIVE=======*/
 /* Para dispositivos con un ancho máximo de 768px (tablets y celulares en orientación horizontal) */
 @media screen and (max-width: 768px) {

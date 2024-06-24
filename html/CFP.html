@@ -171,7 +171,7 @@
          
          <form id="costForm">
            <label for="demand">Demanda:</label>
-           <input type="number" id="demand" required>
+           <input type="number" id="demand" onkeydown="return soloNumeros(event);" required>
            <br>
            <label for="orderMethod">Método de Pedido:</label>
            <select id="orderMethod">
@@ -180,10 +180,10 @@
            </select>
            <br>
            <label for="orderQuantity">Cantidad de Pedido:</label>
-           <input type="number" id="orderQuantity" required>
+           <input type="number" id="orderQuantity" onkeydown="return soloNumeros(event);" required>
            <br>
            <label for="safetyStock">Stock de Seguridad:</label>
-           <input type="number" id="safetyStock" required>
+           <input type="number" id="safetyStock" onkeydown="return soloNumeros(event);" required>
            <br>
            <button type="submit">Calcular</button>
            <div id="resultado"></div>
