@@ -197,10 +197,9 @@ function soloNumeros(event) {
     const isNumber = (key >= '0' && key <= '9');
     const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
     const isDecimal = key === '.' && !inputValue.includes('.');
-    const newValue = inputValue + key;
 
     // Check if the new value would be a negative number
-    if (newValue.includes('-')) {
+    if (key === '-' || (inputValue === '' && key === '-')) {
         mostrarAdvertencia('No se permiten números negativos.');
         event.preventDefault();
         return false;
@@ -249,7 +248,6 @@ document.querySelectorAll('input[data-solo-numeros]').forEach(input => {
         }
     });
 });
-
 
 /*
 function soloNumeros(event) {
