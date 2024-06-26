@@ -197,9 +197,10 @@ function soloNumeros(event) {
     const isNumber = (key >= '0' && key <= '9');
     const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
     const isDecimal = key === '.' && !inputValue.includes('.');
+    const newValue = inputValue + key;
 
     // Check if the new value would be a negative number
-    if (key === '-' || (inputValue === '' && key === '-')) {
+    if (newValue.includes('-')) {
         mostrarAdvertencia('No se permiten números negativos.');
         event.preventDefault();
         return false;
@@ -242,12 +243,22 @@ document.querySelectorAll('input[data-solo-numeros]').forEach(input => {
     input.addEventListener('keydown', soloNumeros);
     input.addEventListener('input', function (event) {
         const inputValue = event.target.value;
-        if (inputValue.includes('-')) {
-            mostrarAdvertencia('No se permiten números negativos.');
-            event.target.value = inputValue.replace(/-/g, ''); // Remover el signo negativo
+        // Remover caracteres no permitidos (incluyendo el signo negativo)
+        const newValue = inputValue.replace(/[^0-9.]/g, '');
+        if (newValue !== inputValue) {
+            mostrarAdvertencia('No se permiten números negativos ni caracteres no numéricos.');
+            event.target.value = newValue;
+        }
+
+        // Asegurar que solo hay un punto decimal
+        const parts = newValue.split('.');
+        if (parts.length > 2) {
+            mostrarAdvertencia('Solo se permite un punto decimal.');
+            event.target.value = parts[0] + '.' + parts.slice(1).join('');
         }
     });
 });
+
 
 /*
 function soloNumeros(event) {
