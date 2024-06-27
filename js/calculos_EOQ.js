@@ -258,11 +258,13 @@ function mostrarAdvertencia(message) {
     }, 1000);
 }
 */
+
+// Función para calcular EOQ
 // Función para calcular EOQ
 function calculateEOQ(demand, orderCost, holdingCost) {
     // Validar que los valores sean numéricos y positivos
     if (isNaN(demand) || demand <= 0 || isNaN(orderCost) || orderCost <= 0 || isNaN(holdingCost) || holdingCost <= 0) {
-        console.error("Error: Alguno de los valores de entrada no es válido.");
+        mostrarAdvertencia("Error: Alguno de los valores de entrada no es válido.");
         return null; // Retorna null para indicar un error en el cálculo
     }
 
@@ -504,20 +506,15 @@ function soloNumeros(event) {
 }
 
 function mostrarAdvertencia(message) {
-    let warningPanel = document.getElementById('warningPanel');
-    if (!warningPanel) {
-        warningPanel = document.createElement('div');
-        warningPanel.id = 'warningPanel';
-        document.body.appendChild(warningPanel);
-    }
-    warningPanel.textContent = message;
-    warningPanel.style.display = 'block';
-    setTimeout(() => {
-        warningPanel.style.display = 'none';
-    }, 1000);
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: message,
+    });
 }
 
 // Agregar validación en los inputs de demanda, costo de pedido y costo de mantenimiento
 document.getElementById("demand").addEventListener("keypress", soloNumeros);
 document.getElementById("order-cost").addEventListener("keypress", soloNumeros);
 document.getElementById("holding-cost").addEventListener("keypress", soloNumeros);
+
