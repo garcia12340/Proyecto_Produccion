@@ -490,19 +490,15 @@ document.getElementById("download-pdf").addEventListener("click", function () {
 
 // Validacion de los Input
 function soloNumeros(event) {
-    const key = event.key;
-    const inputValue = event.target.value;
-    const isNumber = (key >= '0' && key <= '9');
-    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
-    const isDecimal = key === '.' && !inputValue.includes('.');
+    const input = event.target;
+    const value = input.value;
+    
+    // Expresión regular para permitir solo números y un punto decimal
+    const validPattern = /^(\d+\.?\d*)?$/;
 
-    // Verificar si la tecla presionada es un número, una tecla de control o un punto decimal válido
-    if (isNumber || isControlKey || isDecimal) {
-        return true;
-    } else {
+    if (!validPattern.test(value)) {
         mostrarAdvertencia('Por favor, ingrese solo números.');
-        event.preventDefault(); // Prevenir el ingreso de caracteres no válidos
-        return false;
+        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
     }
 }
 
@@ -516,8 +512,8 @@ function mostrarAdvertencia(message) {
 }
 
 // Agregar validación en los inputs de demanda, costo de pedido y costo de mantenimiento
-document.getElementById("demand").addEventListener("keypress", soloNumeros);
-document.getElementById("order-cost").addEventListener("keypress", soloNumeros);
-document.getElementById("holding-cost").addEventListener("keypress", soloNumeros);
+document.getElementById("demand").addEventListener("input", soloNumeros);
+document.getElementById("order-cost").addEventListener("input", soloNumeros);
+document.getElementById("holding-cost").addEventListener("input", soloNumeros);
 
 

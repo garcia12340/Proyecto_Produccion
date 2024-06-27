@@ -172,9 +172,9 @@
       <div class="containere">
          <h1 id="eq">EOQ</h1>
          <form id="crud-form" method="POST">
-            <input type="text" id="demand" placeholder="Demanda" onkeydown="return soloNumeros(event);">
-            <input type="text" id="order-cost" placeholder="Costo de Orden" onkeydown="return soloNumeros(event);">
-            <input type="text" id="holding-cost" placeholder="Costo de Mantenimiento" onkeydown="return soloNumeros(event);">
+            <input type="text" id="demand" placeholder="Demanda" oninput="return soloNumeros(event);">
+            <input type="text" id="order-cost" placeholder="Costo de Orden" oninput="return soloNumeros(event);">
+            <input type="text" id="holding-cost" placeholder="Costo de Mantenimiento" oninput="return soloNumeros(event);">
             <button type="submit">Agregar</button>
             <button id="download-pdf">Descargar PDF</button>
          </form>
