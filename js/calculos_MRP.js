@@ -191,76 +191,7 @@ function displayMRPResults(mrpResults) {
 }
 
 //Validacion de los Input
-function soloNumeros(event) {
-    const key = event.key;
-    const inputValue = event.target.value;
-    const isNumber = (key >= '0' && key <= '9');
-    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
-    const isDecimal = key === '.' && !inputValue.includes('.');
-    const newValue = inputValue + key;
 
-    // Check if the new value would be a negative number
-    if (newValue.includes('-')) {
-        mostrarAdvertencia('No se permiten números negativos.');
-        event.preventDefault();
-        return false;
-    }
-
-    if (isNumber || isControlKey || isDecimal) {
-        return true;
-    } else {
-        mostrarAdvertencia('Por favor, ingrese solo números.');
-        event.preventDefault();
-        return false;
-    }
-}
-
-function mostrarAdvertencia(message) {
-    let warningPanel = document.getElementById('warningPanel');
-    if (!warningPanel) {
-        warningPanel = document.createElement('div');
-        warningPanel.id = 'warningPanel';
-        warningPanel.style.position = 'fixed';
-        warningPanel.style.bottom = '10px';
-        warningPanel.style.left = '50%';
-        warningPanel.style.transform = 'translateX(-50%)';
-        warningPanel.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
-        warningPanel.style.color = 'white';
-        warningPanel.style.padding = '10px';
-        warningPanel.style.borderRadius = '5px';
-        warningPanel.style.zIndex = '1000';
-        document.body.appendChild(warningPanel);
-    }
-    warningPanel.textContent = message;
-    warningPanel.style.display = 'block';
-    setTimeout(() => {
-        warningPanel.style.display = 'none';
-    }, 1000);
-}
-
-// Asignar la función de validación a los inputs
-document.querySelectorAll('input[data-solo-numeros]').forEach(input => {
-    input.addEventListener('keydown', soloNumeros);
-    input.addEventListener('input', function (event) {
-        const inputValue = event.target.value;
-        // Remover caracteres no permitidos (incluyendo el signo negativo)
-        const newValue = inputValue.replace(/[^0-9.]/g, '');
-        if (newValue !== inputValue) {
-            mostrarAdvertencia('No se permiten números negativos ni caracteres no numéricos.');
-            event.target.value = newValue;
-        }
-
-        // Asegurar que solo hay un punto decimal
-        const parts = newValue.split('.');
-        if (parts.length > 2) {
-            mostrarAdvertencia('Solo se permite un punto decimal.');
-            event.target.value = parts[0] + '.' + parts.slice(1).join('');
-        }
-    });
-});
-
-
-/*
 function soloNumeros(event) {
     const key = event.key;
     const inputValue = event.target.value;
@@ -297,4 +228,3 @@ function mostrarAdvertencia(message) {
         warningPanel.style.display = 'none';
     }, 1000);
 }
-*/
