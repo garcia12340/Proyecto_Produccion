@@ -394,6 +394,12 @@ document.getElementById("crud-form").addEventListener("submit", function (event)
     const orderCost = parseFloat(document.getElementById("order-cost").value);
     const holdingCost = parseFloat(document.getElementById("holding-cost").value);
 
+    // Validar si alguno de los valores es NaN o no es positivo
+    if (isNaN(demand) || isNaN(orderCost) || isNaN(holdingCost) || demand <= 0 || orderCost <= 0 || holdingCost <= 0) {
+        mostrarAdvertencia("Error: Alguno de los valores de entrada no es válido.");
+        return; // Salir de la función sin realizar cálculos
+    }
+
     const eoq = calculateEOQ(demand, orderCost, holdingCost);
 
     if (eoq !== null) {
@@ -489,22 +495,18 @@ function soloNumeros(event) {
     const isNumber = (key >= '0' && key <= '9');
     const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
     const isDecimal = key === '.' && !inputValue.includes('.');
-    const newValue = inputValue + key;
 
-    // Check if the new value would be a negative number
-    if (newValue.startsWith('-')) {
-        mostrarAdvertencia('No se permiten números negativos.');
-        return false;
-    }
-
+    // Verificar si la tecla presionada es un número, una tecla de control o un punto decimal válido
     if (isNumber || isControlKey || isDecimal) {
         return true;
     } else {
         mostrarAdvertencia('Por favor, ingrese solo números.');
+        event.preventDefault(); // Prevenir el ingreso de caracteres no válidos
         return false;
     }
 }
 
+// Función para mostrar advertencia usando SweetAlert
 function mostrarAdvertencia(message) {
     Swal.fire({
         icon: 'error',
@@ -517,4 +519,5 @@ function mostrarAdvertencia(message) {
 document.getElementById("demand").addEventListener("keypress", soloNumeros);
 document.getElementById("order-cost").addEventListener("keypress", soloNumeros);
 document.getElementById("holding-cost").addEventListener("keypress", soloNumeros);
+
 
