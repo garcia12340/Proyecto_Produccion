@@ -1,3 +1,5 @@
+
+/*
 .containeres {
     max-width: 650px;
     margin: 20px auto;
@@ -22,7 +24,7 @@ label {
     color: #555;
 }
 
-input[type="number"],
+input[type="text"],
 select {
     width: calc(100% - 12px);
     padding: 8px;
@@ -83,7 +85,8 @@ tr:nth-child(even) {
 }
 
 .actions button.edit {
-    background-color: #17a2b8;
+    background-color:#0074d9;
+    ;
 }
 
 .actions button.delete:hover {
@@ -91,7 +94,7 @@ tr:nth-child(even) {
 }
 
 .actions button.edit:hover {
-    background-color: #138496;
+    background-color: #0074d9;
 }
 
 #cpf{
@@ -122,12 +125,12 @@ form select{
     background-color: #b1b0b0;
 }
 
-/*La notificacion de Error*/
+
 .highlight {
-    background-color: #b40303d1; /* Light red background */
+    background-color: #b40303d1; 
 }
 
-/*La notificacion de Error*/
+
 #warningPanel {
     display: none;
     color: red;
@@ -141,9 +144,10 @@ form select{
     right: 10px;
     z-index: 1000;
 }
+*/
 
 /*==========================================================*/
-/* Responsive CSS */
+/* Responsive CSS 
 @media (max-width: 1200px) {
     .containeres {
         max-width: 90%;
@@ -226,4 +230,113 @@ form select{
     #cpf {
         font-size: 20px;
     }
+}
+*/
+/*======================================*/
+
+.containeres{
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form input {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid rgb(216, 209, 209);
+    text-align: center; /* Alineación por defecto */
+}
+
+th {
+    /*background-color: rgb(187, 173, 173);¨*/
+    background-color: #007bff;
+    color: white;
+}
+
+.actions button.delete {
+    background-color: #b10b0b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.actions button.delete:hover {
+    background-color: #d63031;
+}
+
+.actions button.edit {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.actions button.edit:hover {
+    background-color: #0056b3;
+}
+
+.col-demandas { width: 80px; }
+.col-metodoPedido { width: 80px; }
+.col-cantidadPedido { width: 80px; }
+.col-stockSeguridad { width: 80px; }
+.col-resultado { width: 170px; }
+.col-acciones { width: 80px; }
+
+.th{
+    text-align: center;
+}
+
+#cpf {
+    font-size: 30px;
+    text-align: center;
+    margin-top: -5px;
+    color: #46A2FD;
+}
+
+#recordsBody{
+    background-color: #b1b0b0;
+}
+
+form select{
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 190px;
 }

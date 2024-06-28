@@ -260,7 +260,6 @@ function mostrarAdvertencia(message) {
 */
 
 // Función para calcular EOQ
-// Función para calcular EOQ
 function calculateEOQ(demand, orderCost, holdingCost) {
     // Validar que los valores sean numéricos y positivos
     if (isNaN(demand) || demand <= 0 || isNaN(orderCost) || orderCost <= 0 || isNaN(holdingCost) || holdingCost <= 0) {
@@ -303,6 +302,7 @@ function addRecord(demand, orderCost, holdingCost, eoq) {
 
     transaction.oncomplete = function () {
         displayRecord(newRecord);
+        mostrarExito(); // Mostrar la notificación de éxito
     };
 
     transaction.onerror = function (event) {
@@ -340,6 +340,7 @@ function deleteRecord(event) {
 
         transaction.oncomplete = function () {
             row.remove();
+            mostrarEliminacionExito(); // Mostrar notificación de éxito al eliminar
         };
 
         transaction.onerror = function (event) {
@@ -511,9 +512,28 @@ function mostrarAdvertencia(message) {
     });
 }
 
+// Función para mostrar notificación de éxito usando SweetAlert
+function mostrarExito() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Buen trabajo!',
+        text: 'Haz clic en el botón!',
+        confirmButtonText: 'Listo!',
+    });
+}
+
+// Función para mostrar notificación de éxito al eliminar un registro usando SweetAlert
+function mostrarEliminacionExito() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Registro Eliminado',
+        text: 'El registro ha sido eliminado exitosamente.',
+        confirmButtonText: 'OK'
+    });
+}
+
 // Agregar validación en los inputs de demanda, costo de pedido y costo de mantenimiento
 document.getElementById("demand").addEventListener("input", soloNumeros);
 document.getElementById("order-cost").addEventListener("input", soloNumeros);
 document.getElementById("holding-cost").addEventListener("input", soloNumeros);
-
 

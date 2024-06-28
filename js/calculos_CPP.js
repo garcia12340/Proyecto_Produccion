@@ -33,6 +33,11 @@ function calcularCPP(event) {
     let seguridad = parseInt(document.getElementById('seguridad').value);
     let semanas_Trabajar = parseInt(document.getElementById('n_semanas').value);
 
+    if (isNaN(demanda) || isNaN(ciclo) || isNaN(seguridad) || isNaN(semanas_Trabajar)) {
+        mostrarAdvertencia('Por favor, complete todos los campos con valores válidos.');
+        return;
+    }
+
     let nivelInventarioPromedio = (demanda * ciclo / 2) + seguridad;
     let rotacionInventario = (demanda * semanas_Trabajar) / nivelInventarioPromedio;
     rotacionInventario = rotacionInventario < 1 ? 1 : rotacionInventario;
@@ -61,6 +66,7 @@ function calcularCPP(event) {
 
     document.getElementById('formularioCPP').reset();
     mostrarResultado(nivelInventarioPromedio, rotacionInventario);
+    mostrarExito();
 }
 
 function agregarRegistro(registro) {
@@ -132,6 +138,12 @@ function editarRegistro(index) {
 
     request.onsuccess = function(event) {
         let registro = event.target.result;
+
+        if (!registro) {
+            mostrarAdvertencia('No se pudo encontrar el registro a editar.');
+            return;
+        }
+
         document.getElementById('demanda').value = registro.demanda;
         document.getElementById('ciclo').value = registro.ciclo;
         document.getElementById('seguridad').value = registro.seguridad;
@@ -141,7 +153,7 @@ function editarRegistro(index) {
     };
 
     request.onerror = function(event) {
-        console.log("Error al obtener el registro", event);
+        mostrarAdvertencia('Error al obtener el registro para editar.');
     };
 }
 
@@ -153,6 +165,7 @@ function eliminarRegistro(index) {
     request.onsuccess = function(event) {
         console.log("Registro eliminado: ", event.target.result);
         mostrarRegistros();
+        mostrarEliminacionExito();
     };
 
     request.onerror = function(event) {
@@ -168,39 +181,46 @@ function mostrarResultado(nivelInventarioPromedio, rotacionInventario) {
     document.getElementById('resultado').innerHTML = resultadoHTML;
 }
 
-//Validacion de los Input
+
+// Nueva función soloNumeros
 function soloNumeros(event) {
-    const key = event.key;
-    const inputValue = event.target.value;
-    const isNumber = (key >= '0' && key <= '9');
-    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
-    const isDecimal = key === '.' && !inputValue.includes('.');
-    const newValue = inputValue + key;
+    const input = event.target;
+    const value = input.value;
+    
+    // Expresión regular para permitir solo números y un punto decimal
+    const validPattern = /^(\d+\.?\d*)?$/;
 
-    // Check if the new value would be a negative number
-    if (newValue.startsWith('-')) {
-        mostrarAdvertencia('No se permiten números negativos.');
-        return false;
-    }
-
-    if (isNumber || isControlKey || isDecimal) {
-        return true;
-    } else {
+    if (!validPattern.test(value)) {
         mostrarAdvertencia('Por favor, ingrese solo números.');
-        return false;
+        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
     }
 }
 
+// Función para mostrar advertencia usando SweetAlert
 function mostrarAdvertencia(message) {
-    let warningPanel = document.getElementById('warningPanel');
-    if (!warningPanel) {
-        warningPanel = document.createElement('div');
-        warningPanel.id = 'warningPanel';
-        document.body.appendChild(warningPanel);
-    }
-    warningPanel.textContent = message;
-    warningPanel.style.display = 'block';
-    setTimeout(() => {
-        warningPanel.style.display = 'none';
-    }, 1000);
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: message,
+    });
+}
+
+// Función para mostrar notificación de éxito usando SweetAlert
+function mostrarExito() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Buen trabajo!',
+        text: 'Haz clic en el botón!',
+        confirmButtonText: 'Listo!',
+    });
+}
+
+// Función para mostrar notificación de éxito al eliminar un registro usando SweetAlert
+function mostrarEliminacionExito() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Registro Eliminado',
+        text: 'El registro ha sido eliminado exitosamente.',
+        confirmButtonText: 'OK'
+    });
 }

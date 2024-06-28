@@ -170,23 +170,27 @@
          <h1 id="cpf">Costo Fijo Por Pieza</h1>
          
          <form id="costForm">
-           <label for="demand">Demanda:</label>
-           <input type="number" id="demand" onkeydown="return soloNumeros(event);" required>
-           <br>
-           <label for="orderMethod">Método de Pedido:</label>
-           <select id="orderMethod">
-             <option value="percentage">Porcentaje de Demanda</option>
-             <option value="quantity">Cantidad Fija</option>
-           </select>
-           <br>
-           <label for="orderQuantity">Cantidad de Pedido:</label>
-           <input type="number" id="orderQuantity" onkeydown="return soloNumeros(event);" required>
-           <br>
-           <label for="safetyStock">Stock de Seguridad:</label>
-           <input type="number" id="safetyStock" onkeydown="return soloNumeros(event);" required>
-           <br>
+            <section>
+               <input type="text" id="demand" placeholder="Demanda" oninput="return soloNumeros(event);">
+            <section>
+            
+            <section>
+               <label for="orderMethod">Método de Pedido:</label>
+               <select id="orderMethod">
+                 <option value="percentage">Porcentaje de Demanda</option>
+                 <option value="quantity">Cantidad Fija</option>
+               </select>
+            </section>
+
+            <section>
+               <input type="text" id="orderQuantity" placeholder="Cantidad de Pedido" oninput="return soloNumeros(event);">
+            </section>
+
+            <section>
+               <input type="text" id="safetyStock" placeholder="Stock de Seguridad" oninput="return soloNumeros(event);">
+            </section>
+
            <button type="submit">Calcular</button>
-           <div id="resultado"></div>
          </form>
          <table id="recordsTable">
             <thead>
@@ -209,6 +213,7 @@
    <!--=============== MAIN JS ===============-->
    <script src="../js/main.js"></script>
    <script src="../js/calculos_CFP.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

@@ -37,6 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
   function agregarRegistro(event) {
     event.preventDefault();
 
+    // Validar campos nulos
+    const campos = ['horas', 'mtbf', 'valorMtbf', 'duracion', 'costoHora', 'repuestos', 'costosOperacionales', 'retrasoLogistico', 'costoUnitario', 'costosFallas'];
+    for (const campo of campos) {
+      if (!document.getElementById(campo).value) {
+        mostrarAdvertencia(`El campo ${campo} no puede estar vacío.`);
+        return;
+      }
+    }
+
     const horas = parseFloat(document.getElementById('horas').value);
     const mtbf = document.getElementById('mtbf').value;
     const valorMtbf = parseFloat(document.getElementById('valorMtbf').value);
@@ -90,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
     request.onsuccess = function () {
       formulario.reset();
       mostrarRegistros();
+      mostrarExito();
     };
 
     request.onerror = function (event) {
@@ -139,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     transaction.oncomplete = function () {
       mostrarRegistros();
+      mostrarEliminacionExito();
     };
   };
 
@@ -189,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
           mostrarRegistros();
           formulario.removeEventListener('submit', actualizarRegistro);
           formulario.addEventListener('submit', agregarRegistro);
+          mostrarExito();
         };
       });
     };
@@ -196,38 +208,66 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Validacion de los Input
+// Nueva función para validar solo números y punto decimal
 function soloNumeros(event) {
-  const key = event.key;
-  const inputValue = event.target.value;
-  const isNumber = (key >= '0' && key <= '9');
-  const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
-  const isDecimal = key === '.' && !inputValue.includes('.');
-  const newValue = inputValue + key;
+  const input = event.target;
+  const value = input.value;
+  
+  // Expresión regular para permitir solo números y un punto decimal
+  const validPattern = /^(\d+\.?\d*)?$/;
 
-  // Check if the new value would be a negative number
-  if (newValue.startsWith('-')) {
-    mostrarAdvertencia('No se permiten números negativos.');
-    return false;
-  }
-
-  if (isNumber || isControlKey || isDecimal) {
-    return true;
-  } else {
-    mostrarAdvertencia('Por favor, ingrese solo números.');
-    return false;
+  if (!validPattern.test(value)) {
+      mostrarAdvertencia('Por favor, ingrese solo números.');
+      input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
   }
 }
 
+// Función para mostrar advertencia usando SweetAlert
 function mostrarAdvertencia(message) {
-  let warningPanel = document.getElementById('warningPanel');
-  if (!warningPanel) {
-    warningPanel = document.createElement('div');
-    warningPanel.id = 'warningPanel';
-    document.body.appendChild(warningPanel);
-  }
-  warningPanel.textContent = message;
-  warningPanel.style.display = 'block';
-  setTimeout(() => {
-    warningPanel.style.display = 'none';
-  }, 1000);
+  Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: message,
+  });
 }
+
+// Función para mostrar notificación de éxito usando SweetAlert
+function mostrarExito() {
+  Swal.fire({
+      icon: 'success',
+      title: 'Buen trabajo!',
+      text: 'Haz clic en el botón!',
+      confirmButtonText: 'Listo!',
+  });
+}
+
+// Función para mostrar notificación de éxito al eliminar un registro usando SweetAlert
+function mostrarEliminacionExito() {
+  Swal.fire({
+      icon: 'success',
+      title: 'Registro Eliminado',
+      text: 'El registro ha sido eliminado exitosamente.',
+      confirmButtonText: 'OK'
+  });
+}
+
+// Agregar validación en los inputs de horas, valorMtbf, duracion, costoHora, repuestos, costosOperacionales, 
+//retrasoLogistico, costoUnitario y costosFallas
+document.getElementById("horas").addEventListener("input", soloNumeros);
+document.getElementById("valorMtbf").addEventListener("input", soloNumeros);
+document.getElementById("duracion").addEventListener("input", soloNumeros);
+document.getElementById("costoHora").addEventListener("input", soloNumeros);
+document.getElementById("repuestos").addEventListener("input", soloNumeros);
+document.getElementById("costosOperacionales").addEventListener("input", soloNumeros);
+document.getElementById("retrasoLogistico").addEventListener("input", soloNumeros);
+document.getElementById("costoUnitario").addEventListener("input", soloNumeros);
+document.getElementById("costosFallas").addEventListener("input", soloNumeros);
+
+
+
+
+
+
+
+
+
