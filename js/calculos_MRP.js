@@ -191,7 +191,6 @@ function displayMRPResults(mrpResults) {
 }
 
 //Validacion de los Input
-
 function soloNumeros(event) {
     const key = event.key;
     const inputValue = event.target.value;
