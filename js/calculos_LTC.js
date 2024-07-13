@@ -1,3 +1,4 @@
+
 function agregarCampos() {
     const numSemanas = document.getElementById('numSemanas').value;
     const semanasInputs = document.getElementById('semanasInputs');
@@ -5,9 +6,10 @@ function agregarCampos() {
 
     for (let i = 1; i <= numSemanas; i++) {
         const input = document.createElement('input');
-        input.type = 'number';
+        input.type = 'text';
         input.id = 'semana' + i;
         input.placeholder = 'Requerimiento Semana ' + i;
+        input.addEventListener('input', soloNumeros); // Agregar validación de solo números
         semanasInputs.appendChild(input);
     }
 }
@@ -25,6 +27,11 @@ function calcularLTC() {
 
     for (let i = 1; i <= numSemanas; i++) {
         const requerimiento = parseFloat(document.getElementById('semana' + i).value);
+        if (isNaN(requerimiento) || requerimiento < 0) {
+            mostrarAdvertencia('Por favor, ingrese un número positivo para la semana ' + i);
+            return;
+        }
+
         const costoMantenimiento = requerimiento * periodosMantenidos * K;
         costoAcumulado += costoMantenimiento;
 
@@ -46,6 +53,7 @@ function calcularLTC() {
             periodosMantenidos = 0; // Restablecer los periodos mantenidos
             costoAcumulado = 0; // Opcionalmente, restablecer costo acumulado
             periodoActual = 1; // Restablecer el contador de período
+            mostrarExito(); // Mostrar notificación de éxito
         } else {
             periodosMantenidos++; // Incrementar después de calcular el costo
             periodoActual++; // Incrementar periodo para la siguiente iteración
@@ -53,108 +61,45 @@ function calcularLTC() {
     }
 }
 
-//Validacion de los Input
-/*
+// Validacion de los Input
 function soloNumeros(event) {
-    const key = event.key;
-    const inputValue = event.target.value;
-    const isNumber = (key >= '0' && key <= '9');
-    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
-    const isDecimal = key === '.' && !inputValue.includes('.');
+    const input = event.target;
+    const value = input.value;
 
-    if (isNumber || isControlKey || isDecimal) {
-        return true;
-    } else {
-        mostrarAdvertencia();
-        return false;
+    // Expresión regular para permitir solo números positivos y un punto decimal
+    const validPattern = /^(\d*\.?\d*)$/;
+
+    if (!validPattern.test(value) || parseFloat(value) < 0) {
+        mostrarAdvertencia('Por favor, ingrese solo números positivos.');
+        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
     }
 }
 
-function mostrarAdvertencia() {
-    let warningPanel = document.getElementById('warningPanel');
-    if (!warningPanel) {
-        warningPanel = document.createElement('div');
-        warningPanel.id = 'warningPanel';
-        warningPanel.textContent = 'Por favor, ingrese solo números.';
-        document.body.appendChild(warningPanel);
-    }
-    warningPanel.style.display = 'block';
-    setTimeout(() => {
-        warningPanel.style.display = 'none';
-    }, 1000);
-}
-*/
-
-//Validacion de los Input
-function soloNumeros(event) {
-    const key = event.key;
-    const inputValue = event.target.value;
-    const isNumber = (key >= '0' && key <= '9');
-    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
-    const isDecimal = key === '.' && !inputValue.includes('.');
-    const newValue = inputValue + key;
-
-    // Check if the new value would be a negative number
-    if (newValue.startsWith('-')) {
-        mostrarAdvertencia('No se permiten números negativos.');
-        return false;
-    }
-
-    if (isNumber || isControlKey || isDecimal) {
-        return true;
-    } else {
-        mostrarAdvertencia('Por favor, ingrese solo números.');
-        return false;
-    }
-}
-
+// Función para mostrar advertencia usando SweetAlert
 function mostrarAdvertencia(message) {
-    let warningPanel = document.getElementById('warningPanel');
-    if (!warningPanel) {
-        warningPanel = document.createElement('div');
-        warningPanel.id = 'warningPanel';
-        document.body.appendChild(warningPanel);
-    }
-    warningPanel.textContent = message;
-    warningPanel.style.display = 'block';
-    setTimeout(() => {
-        warningPanel.style.display = 'none';
-    }, 1000);
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: message,
+    });
 }
 
-//Validacion de los Input
-function soloNumeros(event) {
-    const key = event.key;
-    const inputValue = event.target.value;
-    const isNumber = (key >= '0' && key <= '9');
-    const isControlKey = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace' || key === 'Tab';
-    const isDecimal = key === '.' && !inputValue.includes('.');
-    const newValue = inputValue + key;
-
-    // Check if the new value would be a negative number
-    if (newValue.startsWith('-')) {
-        mostrarAdvertencia('No se permiten números negativos.');
-        return false;
-    }
-
-    if (isNumber || isControlKey || isDecimal) {
-        return true;
-    } else {
-        mostrarAdvertencia('Por favor, ingrese solo números.');
-        return false;
-    }
+// Función para mostrar notificación de éxito usando SweetAlert
+function mostrarExito() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Buen trabajo!',
+        text: 'Haz clic en el botón!',
+        confirmButtonText: 'Listo!',
+    });
 }
 
-function mostrarAdvertencia(message) {
-    let warningPanel = document.getElementById('warningPanel');
-    if (!warningPanel) {
-        warningPanel = document.createElement('div');
-        warningPanel.id = 'warningPanel';
-        document.body.appendChild(warningPanel);
-    }
-    warningPanel.textContent = message;
-    warningPanel.style.display = 'block';
-    setTimeout(() => {
-        warningPanel.style.display = 'none';
-    }, 1000);
+// Función para mostrar notificación de éxito al eliminar un registro usando SweetAlert
+function mostrarEliminacionExito() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Registro Eliminado',
+        text: 'El registro ha sido eliminado exitosamente.',
+        confirmButtonText: 'OK'
+    });
 }

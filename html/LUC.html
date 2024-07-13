@@ -19,7 +19,7 @@
       <nav class="nav container">
          <div class="nav__data">
             <a href="../index.html" class="nav__logo">
-               <i class="ri-planet-line"></i> Company
+               <i class="ri-planet-line"></i> PRODUCCION III
             </a>
 
             <div class="nav__toggle" id="nav-toggle">
@@ -72,11 +72,6 @@
                               </a>
                            </li>
 
-                           <li>
-                              <a href="#" class="dropdown__sublink">
-                                 <i class="ri-refund-2-line"></i> Refunds
-                              </a>
-                           </li>
                         </ul>
                      </li>
                   </ul>
@@ -124,16 +119,11 @@
                      </li>
 
                      <li>
-                        <a href="#" target="_blank" class="dropdown__link">
-                           <i class="ri-pie-chart-line"></i> Esperando 1
+                        <a href="../html/KANBANES.html" target="_blank" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Kanbanes
                         </a>                          
                      </li>
 
-                     <li>
-                        <a href="#" target="_blank" class="dropdown__link">
-                           <i class="ri-arrow-up-down-line"></i> Esperando 2
-                        </a>
-                     </li>
                   </ul>
 
                </li>
@@ -176,18 +166,12 @@
          <h1 id="l">Método Del Menor Costo Unitario LUC</h1>
 
          <form id="lucForm">
-            <label for="costHold">Costo de Ordenar:</label>
-            <input type="number" id="costHold" step="0.01" onkeydown="return soloNumeros(event);" required><br>
-   
-            <label for="costOrder">Costo de Mantenimiento:</label>
-            <input type="number" id="costOrder" step="0.01" onkeydown="return soloNumeros(event);" required><br>
-   
-            <label for="numWeeks">Número de Semanas:</label>
-            <input type="number" id="numWeeks" onkeydown="return soloNumeros(event);" required><br>
+            <input type="text" id="costHold" step="0.01" placeholder="Costo de Ordenar (S)" oninput="return soloNumeros(event);" required>
+            <input type="text" id="costOrder" step="0.01" placeholder="Costo de Mantenimiento (K)" oninput="return soloNumeros(event);" required>
+            <input type="text" id="numWeeks" placeholder="Número de Semanas" oninput="return soloNumeros(event);" required>
    
             <h4 id="le">Ingrese requerimientos brutos por semana:</h4>
             <div id="weeklyDemands"></div>
-   
             <button type="submit">Calcular</button>
          </form>
 
@@ -199,6 +183,7 @@
    <!--=============== MAIN JS ===============-->
    <script src="../js/main.js"></script>
    <script src="../js/calculos_LUC.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

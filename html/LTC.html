@@ -19,7 +19,7 @@
         <nav class="nav container">
             <div class="nav__data">
                 <a href="../index.html" class="nav__logo">
-                    <i class="ri-planet-line"></i> Company
+                    <i class="ri-planet-line"></i> PRODUCCION III
                 </a>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -71,12 +71,6 @@
                                             <i class="ri-refund-2-line"></i> Costo Promedio Por Pieza
                                         </a>
                                     </li>
-
-                                    <li>
-                                        <a href="#" class="dropdown__sublink">
-                                            <i class="ri-refund-2-line"></i> Refunds
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -125,16 +119,12 @@
                             </li>
     
                             <li>
-                               <a href="#" target="_blank" class="dropdown__link">
-                                  <i class="ri-pie-chart-line"></i> Esperando 1
-                               </a>                          
+                                <a href="../html/KANBANES.html" target="_blank" class="dropdown__link">
+                                   <i class="ri-pie-chart-line"></i> Kanbanes
+                                </a>                          
                             </li>
     
-                            <li>
-                               <a href="#" target="_blank" class="dropdown__link">
-                                  <i class="ri-arrow-up-down-line"></i> Esperando 2
-                               </a>
-                            </li>
+
                         </ul>  
                     </li>
                     <!--=============== DROPDOWN 4 ===============-->
@@ -176,12 +166,9 @@
             <h1 id="eq">Método Del Menor Costo Total LTC</h1>
 
             <form id="ltcForm" method="post">
-                <label for="numSemanas">Número de Semanas:</label>
-                <input type="number" id="numSemanas" onkeydown="return soloNumeros(event);" required><br>
-                <label for="costoMantenimiento">Costo de Mantenimiento (K):</label>
-                <input type="number" id="costoMantenimiento" onkeydown="return soloNumeros(event);" required><br>
-                <label for="recepcionPlaneada">Recepción Planeada:</label>
-                <input type="number" id="recepcionPlaneada" onkeydown="return soloNumeros(event);" required><br>
+                <input type="text" id="numSemanas" placeholder="Número de Semanas" oninput="return soloNumeros(event);" required>
+                <input type="text" id="costoMantenimiento" placeholder="Costo de Mantenimiento (K)" oninput="return soloNumeros(event);" required>
+                <input type="text" id="recepcionPlaneada" placeholder="Costo De Ordenar (S)" oninput="return soloNumeros(event);" required>
                 <button type="button" onclick="agregarCampos()">Agregar Semanas</button>
             </form>
 
@@ -195,7 +182,7 @@
                         <th>Unidades</th>
                         <th>Periodos mantenidos</th>
                         <th>Costo de Mantenimiento</th>
-                        <th>Costo de mantenimiento acumulado</th>
+                        <th>Costo de Mantenimiento acumulado</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -209,6 +196,7 @@
     <!--=============== MAIN JS ===============-->
     <script src="../js/main.js"></script>
     <script src="../js/calculos_LTC.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
