@@ -233,49 +233,6 @@ let treeData = [];
 let relationships = [];
 let quantities = {};
 
-// Validacion de los Input
-function soloNumeros(event) {
-    const input = event.target;
-    const value = input.value;
-
-    // Expresión regular para permitir solo números positivos y un punto decimal
-    const validPattern = /^(\d*\.?\d*)$/;
-
-    if (!validPattern.test(value) || parseFloat(value) < 0) {
-        mostrarAdvertencia('Por favor, ingrese solo números positivos.');
-        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
-    }
-}
-
-// Función para mostrar advertencia usando SweetAlert
-function mostrarAdvertencia(message) {
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: message,
-    });
-}
-
-// Función para mostrar notificación de éxito usando SweetAlert
-function mostrarExito(message) {
-    Swal.fire({
-        icon: 'success',
-        title: 'Buen trabajo!',
-        text: message,
-        confirmButtonText: 'Listo!',
-    });
-}
-
-// Función para mostrar notificación de éxito al eliminar un registro usando SweetAlert
-function mostrarEliminacionExito() {
-    Swal.fire({
-        icon: 'success',
-        title: 'Registro Eliminado',
-        text: 'El registro ha sido eliminado exitosamente.',
-        confirmButtonText: 'OK'
-    });
-}
-
 function addNode() {
     const nodeName = document.getElementById("nodeName").value.trim();
     const parentNode = document.getElementById("parentNode").value.trim();
@@ -462,4 +419,61 @@ function displayMRPResults(mrpResults) {
     table.appendChild(thead);
     table.appendChild(tbody);
     resultsDiv.appendChild(table);
+}
+
+// Validacion de los Input
+function soloNumeros(event) {
+    const input = event.target;
+    const value = input.value;
+
+    // Expresión regular para permitir solo números positivos y un punto decimal
+    const validPattern = /^(\d*\.?\d*)$/;
+
+    if (!validPattern.test(value) || parseFloat(value) < 0) {
+        mostrarAdvertencia('Por favor, ingrese solo números positivos.');
+        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
+    }
+}
+
+// Validación de los Input para letras
+function soloLetras(event) {
+    const input = event.target;
+    const value = input.value;
+    
+    // Expresión regular para permitir solo letras
+    const validPattern = /^[a-zA-Z]*$/;
+
+    if (!validPattern.test(value)) {
+        mostrarAdvertencia('Por favor, ingrese solo letras.');
+        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
+    }
+}
+
+// Función para mostrar advertencia usando SweetAlert
+function mostrarAdvertencia(message) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: message,
+    });
+}
+
+// Función para mostrar notificación de éxito usando SweetAlert
+function mostrarExito(message) {
+    Swal.fire({
+        icon: 'success',
+        title: 'Buen trabajo!',
+        text: message,
+        confirmButtonText: 'Listo!',
+    });
+}
+
+// Función para mostrar notificación de éxito al eliminar un registro usando SweetAlert
+function mostrarEliminacionExito() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Registro Eliminado',
+        text: 'El registro ha sido eliminado exitosamente.',
+        confirmButtonText: 'OK'
+    });
 }

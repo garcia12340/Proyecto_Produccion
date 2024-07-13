@@ -159,11 +159,11 @@
 
     <main>
         <div class="contenedorMrp">
-            <h1 id="eq">Ingrese Los Nodos Del Mapa Conceptual</h1>
+            <h1 id="eq">Diagrama Arbolar</h1>
 
             <form id="nodeForm">
-                <input type="text" id="nodeName" placeholder="Nombre del nodo" name="nodeName" oninput="return soloNumeros(event);" required>
-                <input type="text" id="parentNode" placeholder="Nodo padre (deje en blanco para nodo raíz)" name="parentNode" oninput="return soloNumeros(event);">
+                <input type="text" id="nodeName" placeholder="Nombre del nodo" name="nodeName" oninput="return soloLetras(event);" required>
+                <input type="text" id="parentNode" placeholder="Nodo padre (deje en blanco para nodo raíz)" name="parentNode" oninput="return soloLetras(event);">
                 <label for="quantity">Cantidad:</label><br>
                 <input type="text" id="quantity" name="quantity" oninput="return soloNumeros(event);" required min="1" value="1">
                 <button type="button" onclick="addNode()">Añadir Nodo</button>
