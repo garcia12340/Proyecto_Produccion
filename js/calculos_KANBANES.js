@@ -55,10 +55,10 @@ function generateForm() {
 
         formGroup.innerHTML = `
                     <label for="productName${i}">Producto ${i} (Nombre)</label>
-                    <input type="text" id="productName${i}" placeholder="Nombre del Producto" oninput="return soloNumeros(event);" required>
+                    <input type="text" id="productName${i}" placeholder="Nombre del Producto" oninput="return soloLetras(event);" required>
                     <label for="product${i}">Producto ${i} (Demanda diaria)</label>
-                    <input type="text" id="product${i}" placeholder="Demanda diaria" oninput="return soloNumeros(event);" required>
-                    <label for="time${i}">Producto ${i} (Tiempo de reposición en horas)</label>
+                    <input type="text" id="product${i}" placeholder="Demanda diaria" oninput="return soloNumeros1(event);" required>
+                    <label for="time${i}">Producto ${i} (Tiempo de reposición en minutos)</label>
                     <input type="text" id="time${i}" placeholder="Tiempo de reposición (horas)" oninput="return soloNumeros(event);" required>
                     <label for="safety${i}">Producto ${i} (Stock de seguridad en %)</label>
                     <input type="text" id="safety${i}" placeholder="Stock de seguridad (%)" oninput="return soloNumeros(event);" required>
@@ -178,7 +178,33 @@ function soloNumeros(event) {
     }
 }
 
-// mostrarEliminacionExito(); // Mostrar notificación de éxito al eliminar
+// Validación de los Input para letras
+function soloLetras(event) {
+    const input = event.target;
+    const value = input.value;
+    
+    // Expresión regular para permitir solo letras
+    const validPattern = /^[a-zA-Z]*$/;
+
+    if (!validPattern.test(value)) {
+        mostrarAdvertencia('Por favor, ingrese solo letras.');
+        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
+    }
+}
+
+// Validación de los Input
+function soloNumeros1(event) {
+    const input = event.target;
+    const value = input.value;
+    
+    // Expresión regular para permitir solo números
+    const validPattern = /^-?\d*$/;
+
+    if (!validPattern.test(value)) {
+        mostrarAdvertencia('Por favor, ingrese solo números.');
+        input.value = value.slice(0, -1); // Eliminar el último carácter ingresado
+    }
+}
 
 // Función para mostrar advertencia usando SweetAlert
 function mostrarAdvertencia(message) {

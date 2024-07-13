@@ -1,5 +1,5 @@
 // IndexedDB initialization
-/*
+/**
 let db;
 const request = indexedDB.open('RecipientesDB', 1);
 
@@ -82,9 +82,9 @@ function saveRecord() {
     }
 
     const maxInventory = Math.ceil(N) * containerSize;
-    const K = (adjustedDemand * adjustedTurnaroundTime) / containerSize;
+    const K = Math.ceil(N) * containerSize;
     const roundedK = Math.ceil(K);
-  
+
     const transaction = db.transaction(['recipientes'], 'readwrite');
     const objectStore = transaction.objectStore('recipientes');
 
@@ -173,7 +173,7 @@ function editRecord(id) {
     };
 }
 
-
+//Validacion de los Input
 function soloNumeros(event) {
     const key = event.key;
     const inputValue = event.target.value;
@@ -209,7 +209,7 @@ function mostrarAdvertencia(message) {
         warningPanel.style.display = 'none';
     }, 1000);
 }
-*/
+ */
 let db;
 const request = indexedDB.open('RecipientesDB', 1);
 
@@ -508,5 +508,3 @@ function mostrarEliminacionExito() {
         confirmButtonText: 'OK'
     });
 }
-
-

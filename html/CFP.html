@@ -181,7 +181,11 @@
             <section>
                <input type="text" id="safetyStock" placeholder="Stock de Seguridad" oninput="return soloNumeros(event);">
             </section>
-         
+            
+            <section>
+               <input type="text" id="n_semanas" min="0" placeholder="Semanas A Trabajar" oninput="return soloNumeros(event);" required>
+            </section>
+
             <button type="submit">Calcular</button>
          </form>
          <table id="recordsTable">
@@ -191,6 +195,7 @@
                   <th class="col-metodoPedido">Método Pedido</th>
                   <th class="col-cantidadPedido">Cantidad Pedido</th>
                   <th class="col-stockSeguridad">Stock Seguridad</th>
+                  <th class="col-semanas">Numeros De Semanas</th>
                   <th class="col-resultado">Resultado</th>
                   <th class="col-acciones">Acciones</th>
                </tr>

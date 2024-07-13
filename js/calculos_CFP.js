@@ -197,11 +197,12 @@ function calculateCFP() {
     var orderMethod = document.getElementById('orderMethod').value;
     var orderQuantity = parseInt(document.getElementById('orderQuantity').value);
     var safetyStock = parseInt(document.getElementById('safetyStock').value);
-    
-    console.log("Valores actuales del formulario:", {recordId, demand, orderMethod, orderQuantity, safetyStock});
+    let semanas_Trabajar = parseInt(document.getElementById('n_semanas').value);
+
+    console.log("Valores actuales del formulario:", {recordId, demand, orderMethod, orderQuantity, safetyStock, semanas_Trabajar});
 
     // Validar solo si no es una edición (es decir, si recordId está vacío)
-    if (!recordId && (isNaN(demand) || !orderMethod || isNaN(orderQuantity) || isNaN(safetyStock))) {
+    if (!recordId && (isNaN(demand) || !orderMethod || isNaN(orderQuantity) || isNaN(safetyStock) || isNaN(semanas_Trabajar))) {
         console.error("Algunos campos están vacíos o no son válidos")
         //mostrarAdvertencia("Algunos campos están vacíos o no son válidos");
         return; // No continuar si alguno de los valores es NaN o el método de pedido no está seleccionado
@@ -215,7 +216,7 @@ function calculateCFP() {
     }
 
     var averageInventory = (orderQuantityCalculated / 2) + safetyStock;
-    var inventoryTurnover = demand / averageInventory;
+    var inventoryTurnover = (demand * semanas_Trabajar) / averageInventory;
 
     var resultadoText = "Nivel de Inventario Promedio: " + averageInventory.toFixed(0) + " unidades<br>" +
         "<br>Rotación de Inventario: " + inventoryTurnover.toFixed(0) + " veces al año";
@@ -223,9 +224,9 @@ function calculateCFP() {
     console.log("Resultado del cálculo:", resultadoText);
 
     if (recordId) {
-        updateRecordInIndexedDB(parseInt(recordId), demand, orderMethod, orderQuantity, safetyStock, resultadoText);
+        updateRecordInIndexedDB(parseInt(recordId), demand, orderMethod, orderQuantity, safetyStock, semanas_Trabajar, resultadoText);
     } else {
-        saveRecordToIndexedDB(demand, orderMethod, orderQuantity, safetyStock, resultadoText);
+        saveRecordToIndexedDB(demand, orderMethod, orderQuantity, safetyStock, semanas_Trabajar, resultadoText);
     }
     resetForm(); // Resetear el formulario después de guardar el registro
     mostrarExito(); // Mostrar notificación de éxito después de guardar
@@ -244,6 +245,7 @@ function openDatabase() {
         objectStore.createIndex('orderMethod', 'orderMethod', { unique: false });
         objectStore.createIndex('orderQuantity', 'orderQuantity', { unique: false });
         objectStore.createIndex('safetyStock', 'safetyStock', { unique: false });
+        objectStore.createIndex('semanas_Trabajar','semanas_Trabajar', { unique: false });
         objectStore.createIndex('resultado', 'resultado', { unique: false });
     };
 
@@ -257,7 +259,7 @@ function openDatabase() {
     };
 }
 
-function saveRecordToIndexedDB(demand, orderMethod, orderQuantity, safetyStock, resultadoText) {
+function saveRecordToIndexedDB(demand, orderMethod, orderQuantity, safetyStock, semanas_Trabajar, resultadoText) {
     const transaction = db.transaction(['records'], 'readwrite');
     const objectStore = transaction.objectStore('records');
 
@@ -266,6 +268,7 @@ function saveRecordToIndexedDB(demand, orderMethod, orderQuantity, safetyStock, 
         orderMethod: orderMethod,
         orderQuantity: orderQuantity,
         safetyStock: safetyStock,
+        semanas_Trabajar: semanas_Trabajar,
         resultado: resultadoText
     };
 
@@ -281,7 +284,7 @@ function saveRecordToIndexedDB(demand, orderMethod, orderQuantity, safetyStock, 
     };
 }
 
-function updateRecordInIndexedDB(id, demand, orderMethod, orderQuantity, safetyStock, resultadoText) {
+function updateRecordInIndexedDB(id, demand, orderMethod, orderQuantity, safetyStock, semanas_Trabajar, resultadoText) {
     const transaction = db.transaction(['records'], 'readwrite');
     const objectStore = transaction.objectStore('records');
 
@@ -291,6 +294,7 @@ function updateRecordInIndexedDB(id, demand, orderMethod, orderQuantity, safetyS
         orderMethod: orderMethod,
         orderQuantity: orderQuantity,
         safetyStock: safetyStock,
+        semanas_Trabajar: semanas_Trabajar,
         resultado: resultadoText
     };
 
@@ -331,6 +335,7 @@ function displayRecords(records) {
             "<td>" + record.orderMethod + "</td>" +
             "<td>" + record.orderQuantity + "</td>" +
             "<td>" + record.safetyStock + "</td>" +
+            "<td>" + record.semanas_Trabajar + "</td>" +
             "<td>" + record.resultado + "</td>" +
             "<td class='actions'>" +
             "<button class='edit' onclick='editRecord(" + record.id + ")'>Editar</button>" +
@@ -369,6 +374,7 @@ function editRecord(id) {
         document.getElementById('orderMethod').value = record.orderMethod;
         document.getElementById('orderQuantity').value = record.orderQuantity;
         document.getElementById('safetyStock').value = record.safetyStock;
+        document.getElementById('n_semanas').value = record.semanas_Trabajar;
         console.log('Registro cargado para edición:', record);
 
         // Asegurarse de que los valores sean números
@@ -376,6 +382,7 @@ function editRecord(id) {
         document.getElementById('orderMethod').value = record.orderMethod || '';
         document.getElementById('orderQuantity').value = record.orderQuantity || '';
         document.getElementById('safetyStock').value = record.safetyStock || '';
+        document.getElementById('n_semanas').value = record.semanas_Trabajar || '';
     };
 
     request.onerror = function(event) {

@@ -309,10 +309,11 @@ th {
     background-color: #0056b3;
 }
 
-.col-demandas { width: 80px; }
+.col-demandas { width: 70px; }
 .col-metodoPedido { width: 80px; }
 .col-cantidadPedido { width: 80px; }
 .col-stockSeguridad { width: 80px; }
+.col-semanas { width: 90px; }
 .col-resultado { width: 170px; }
 .col-acciones { width: 80px; }
 
@@ -396,7 +397,7 @@ form select{
         font-size: 12px;
     }
 
-    .col-demandas, .col-metodoPedido, .col-cantidadPedido, .col-stockSeguridad, .col-resultado, .col-acciones {
+    .col-demandas, .col-metodoPedido, .col-cantidadPedido, .col-stockSeguridad,.col-semanas, .col-resultado, .col-acciones {
         width: auto;
     }
 }
@@ -424,7 +425,7 @@ form select{
         font-size: 10px;
     }
 
-    .col-demandas, .col-metodoPedido, .col-cantidadPedido, .col-stockSeguridad, .col-resultado, .col-acciones {
+    .col-demandas, .col-metodoPedido, .col-cantidadPedido, .col-stockSeguridad, .col-semanas, .col-resultado, .col-acciones {
         width: 100%;
     }
 }
@@ -452,7 +453,7 @@ form select{
         font-size: 8px;
     }
 
-    .col-demandas, .col-metodoPedido, .col-cantidadPedido, .col-stockSeguridad, .col-resultado, .col-acciones {
+    .col-demandas, .col-metodoPedido, .col-cantidadPedido, .col-stockSeguridad, .col-semanas, .col-resultado, .col-acciones {
         width: 100%;
     }
 }
