@@ -214,7 +214,6 @@ function soloNumeros(event) {
     }
 }
 
-
 function mostrarAdvertencia(message) {
     let warningPanel = document.getElementById('warningPanel');
     if (!warningPanel) {
@@ -407,6 +406,9 @@ function displayMRPResults(mrpResults) {
         </tr>
     `;
 
+    let totalQuantity = 0;
+    let nodeCount = Object.keys(mrpResults).length;
+
     for (const [material, quantity] of Object.entries(mrpResults)) {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -414,7 +416,18 @@ function displayMRPResults(mrpResults) {
             <td>${quantity}</td>
         `;
         tbody.appendChild(row);
+
+        totalQuantity += quantity;
     }
+
+    const averageQuantity = totalQuantity / nodeCount;
+
+    const averageRow = document.createElement('tr');
+    averageRow.innerHTML = `
+        <td><strong>Promedio</strong></td>
+        <td><strong>${averageQuantity.toFixed(2)}</strong></td>
+    `;
+    tbody.appendChild(averageRow);
 
     table.appendChild(thead);
     table.appendChild(tbody);
