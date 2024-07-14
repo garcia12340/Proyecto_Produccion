@@ -44,9 +44,9 @@ form button {
 }
 
 table {
-    width: 100%;
+    width: 35%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-left: 32%;
 }
 
 table, th, td {
@@ -60,9 +60,10 @@ th {
     color: white;
 }
 
-#data-body{
+#resultsBody{
     background-color: #b1b0b0;
 }
+
 button.delete {
     background-color: #b10b0b;
     color: white;
@@ -111,14 +112,20 @@ th.eoq, td.eoq {
     border: 1px solid;
     border-radius: 5px;
 }
+
 .success {
     color: green;
     border-color: green;
 }
+
 .error {
     color: red;
     border-color: red;
 }
+
+.col-producto { width: 100px; }
+.col-kanbanes { width: 85px; }
+.col-accion { width: 82px; }
 
 /*La notificacion de Error*/
 .highlight {
