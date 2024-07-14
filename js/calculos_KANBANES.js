@@ -101,7 +101,8 @@ function calculateKanbans() {
 
         //console.log(`Producto ${i}: ${productName}, Demanda: ${demand}, Tiempo: ${time}, Seguridad: ${safety}, Contenedor: ${containerSize}`);
 
-        const kanban = (demand * time * (1 + safety)) / containerSize;
+        const kanban = Math.abs((demand * time * (1 + safety)) / containerSize);
+        //const kanban = (demand * time * (1 + safety)) / containerSize;
         console.log(`Kanban ${i}: ${Math.ceil(kanban)}`);
 
         totalKanban += Math.ceil(kanban);
