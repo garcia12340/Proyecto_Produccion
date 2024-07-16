@@ -614,6 +614,7 @@ function mostrarEliminacionExito() {
     });
 }
 */
+
 // Definición de variables globales para la base de datos IndexedDB
 const dbName = 'kanbanDB';
 const dbVersion = 1;
@@ -808,6 +809,8 @@ function displaySavedRecords() {
 
         resultsBody.innerHTML = ''; // Limpiar la tabla antes de agregar registros
 
+        let totalKanban = 0;
+
         records.forEach(record => {
             const newRow = resultsBody.insertRow();
             const cell1 = newRow.insertCell(0);
@@ -826,8 +829,18 @@ function displaySavedRecords() {
             cell5.textContent = record.containerSize;
             cell6.textContent = Math.ceil(record.kanban);
 
+            totalKanban += Math.ceil(record.kanban);
+
             //cell7.textContent = record.totalKanban; // Ajustar según cómo calculas el total de kanbanes
             cell7.innerHTML = `<button class="edit" onclick="editRecord(${record.id})">Editar</button><br><button class="delete" onclick="deleteRecord(${record.id})">Eliminar</button>`;
+
+            // Mostrar el total de Kanbanes al final de la tabla
+            const totalRow = resultsBody.insertRow();
+            const totalCell1 = totalRow.insertCell(0);
+            const totalCell2 = totalRow.insertCell(1);
+            totalCell1.textContent = 'Suma Total Kanbanes';
+            totalCell2.textContent = totalKanban;
+            
         });
     };
 
@@ -929,6 +942,7 @@ function deleteRecord(id) {
     };
 }
 
+
 // Validacion de los Input
 function soloNumeros(event) {
     const input = event.target;
@@ -999,7 +1013,6 @@ function mostrarEliminacionExito() {
         confirmButtonText: 'OK'
     });
 }
-
 
 // Inicialización de la aplicación al cargar la página
 window.onload = function () {

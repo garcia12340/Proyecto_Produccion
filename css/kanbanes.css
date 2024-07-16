@@ -46,7 +46,7 @@ form button {
 table {
     width: 80%;
     border-collapse: collapse;
-    margin-left: 9%;
+    margin-left: 11%;
 }
 
 table, th, td {
@@ -209,6 +209,7 @@ th.eoq, td.eoq {
 
     table, th, td {
         font-size: 10px;
+        margin-left: 4%;
     }
 
 }
@@ -234,6 +235,7 @@ th.eoq, td.eoq {
 
     table, th, td {
         font-size: 8px;
+        margin-left: 0.5%;
     }
 
 }
